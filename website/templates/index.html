@@ -2,13 +2,24 @@
 <html>
 <head>
   <title>Terzani Online Museum</title>
+  <link type="text/css" rel="stylesheet" href="/static/js/galleria-1.6.1/dist/themes/azur/azur.classic.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <script src="/static/js/galleria-1.6.1/dist/galleria.min.js"></script>
 </head>
 <body>
+  <div class="galleria" style = "height: 800px; width: 600px;">s
 {% for image in images %}
-  <div class=”item”>
+
     <img src={{ url_for('static', filename='images/') }}{{image}} style="width: 30%;">
-  </div>
+
 {% endfor %}
-	
+	  </div>
 </body>
+
+        <script>
+            (function() {
+                Galleria.loadTheme('/static/js/galleria-1.6.1/dist/themes/azur/galleria.azur.min.js');
+                Galleria.run('.galleria');
+            }());
+        </script>
 </html>	
