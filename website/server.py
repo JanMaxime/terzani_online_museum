@@ -1,10 +1,14 @@
 from flask import Flask, redirect, url_for, render_template, request
 from flask_pymongo import PyMongo
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
 
 from search import *
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb+srv://terzani:terzanidb@terzani.4wrdm.mongodb.net/terzani_photos?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
 test_data = mongo.db["test_data"]
@@ -49,7 +53,7 @@ def search_page():
 				link = f"http://dl.cini.it:8080/digilib/Scaler/IIIF/cb46e00d902f9936224ca6ef81834a35/{x1},{y1},{width},{height}/max/0/default.jpg"
 
 
-		return render_template("search.html", result=link, not_found = False, full_default = display_full, default_item=request.form["item"])
+		return render_template("search.html", result=link, not_found = (anno == None), full_default = display_full, default_item=request.form["item"])
 	else:
 		return render_template("search.html", result=None, not_found = False, full_default = False)
 
