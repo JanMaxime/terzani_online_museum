@@ -1,38 +1,79 @@
 {% extends "base.html" %}
 
-{% block title %}Search{%endblock%}
 
+{% block title %}Search{%endblock%}
+{% block scripts %}
+  <script>
+    $(document).on("click", ".open-iiif", function () {
+      console.log($(this).data('iiif'))
+      var iiif = JSON.stringify($(this).data('iiif'), null , 3);
+      document.getElementById("modal_iiif").innerHTML = iiif;
+  });
+  </script>
+{%endblock%}
 {% block body %}
 <div class="container">
     <form action="#" method = "POST">
         <div class="form-group">
           <label>What item are you looking for ?</label>
-          <input class="form-control" placeholder="Item" name="item" value = "{{default_item}}" required/>
+          <input class="form-control" placeholder="Item" name="item" value = "{{item}}" required/>
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="display_full" {% if full_default%}checked{%endif%}>
+            <input type="checkbox" class="form-check-input" name="display_full" {% if display_full%}checked{%endif%}>
             <label class="form-check-label" >Display full images</label >
           </div>
 
         
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
-</div>
 
-{% if not_found%}
-<div class = "container">
-    <div class="alert alert-danger" role="alert">
-        No corresponding result
+
+<!-- Modal -->
+<div class="modal fade" id="iiif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="width: auto; max-width: 960px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">IIIF annotation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+        <pre id="modal_iiif"></pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
-
-{% endif %}
-
 {% if results|length > 0%}
-<div class="container">
-    <img src = "{{results[0][1][0]}}" class="img-fluid" ></img>
-</div>
+<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0"> {{number_of_boxes}} Results {% if not display_full %}on {{results|length}} images{%endif%}</h1>
+<hr class="mt-2 mb-5">
+<div class="row text-center text-lg-left">
+  {% for iiif_and_links in results %}
+    {% for link in iiif_and_links[1] %}
 
+    {% if display_full %}
+    <div class="col-12">
+    {% else %}
+    <div class="col-lg-4 col-md-6 col-12">
+    {%endif%}
+
+        <a  href="#iiif" class="d-block mb-4 h-100 open-iiif" data-iiif="{{iiif_and_links[0]}}" data-toggle="modal">
+            <img class="img-fluid img-thumbnail" src="{{link}}">
+        </a>
+        
+      </div>
+
+    {% endfor %}
+  {% endfor %}
+  </div>
+</div>
+{%else%}
+    <div class="alert alert-danger col-lg-2 col-md-4 col-6" role="alert">
+        No matching result
+    </div>
 {% endif %}
 
 {% endblock %}
