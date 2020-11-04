@@ -28,9 +28,9 @@
 
 {% endif %}
 
-{% if result != None%}
+{% if results|length > 0%}
 <div class="container">
-    <img src = "{{result}}" class="img-fluid" ></img>
+    <img src = "{{results[0][1][0]}}" class="img-fluid" ></img>
 </div>
 
 {% endif %}

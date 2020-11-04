@@ -11,8 +11,8 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
-test_data = mongo.db["test_data"]
-print(mongo.db)
+sample_annotations = mongo.db["sample_annotations"]
+
 images = ["cini"+ str(x) + "_d.png" for x in range(1,11)]
 
 
@@ -28,34 +28,13 @@ def gallery():
 
 @app.route("/search", methods=["GET", "POST"])
 def search_page():
+	iiif_and_link = []
 	if request.method == "POST":
-		anno = search_database(request.form["item"])
-		display_full = request.form.get("display_full", False)
-		link = ""
-		if anno != None:
-			upper_left_vertex = anno["bounding_poly"]["normalized_vertices"][0]
-			lower_right_vertex = anno["bounding_poly"]["normalized_vertices"][2]
-
-
-			x1 = upper_left_vertex["x"] * 1943
-			y1 = upper_left_vertex["y"] * 1458
-
-			x2 = lower_right_vertex["x"] * 1943
-			y2 = lower_right_vertex["y"] * 1458
-
-			width = x2-x1
-			height = y2-y1
-
+		photos = search_item_in_database(request.form["item"], sample_annotations)
+		for photo in photos:
+			iiif_and_link.append((photo["iiif"], [photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/" + str (box[0]) + "," + str (box[1]) + "," +str (box[2]) + "," + str (box[3]) + "/max/0/default.jpg" for box in photo["obj_boxes"][request.form["item"]]]  ))
 			
-			if(display_full):
-				link = "http://dl.cini.it:8080/digilib/Scaler/IIIF/cb46e00d902f9936224ca6ef81834a35/full/max/0/default.jpg"
-			else:
-				link = f"http://dl.cini.it:8080/digilib/Scaler/IIIF/cb46e00d902f9936224ca6ef81834a35/{x1},{y1},{width},{height}/max/0/default.jpg"
-
-
-		return render_template("search.html", result=link, not_found = (anno == None), full_default = display_full, default_item=request.form["item"])
-	else:
-		return render_template("search.html", result=None, not_found = False, full_default = False)
+	return render_template("search.html", results = iiif_and_link)
 
 
 if __name__ == "__main__":
