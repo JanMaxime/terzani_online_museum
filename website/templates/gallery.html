@@ -1,24 +1,16 @@
 {% extends "base.html" %}
 
 {% block title %}Gallery{%endblock%}
-{% block scripts %}
-<script src="/static/js/galleria-1.6.1/dist/galleria.min.js"></script>
-<script>
-    (function() {
-        Galleria.loadTheme('/static/js/galleria-1.6.1/dist/themes/azur/galleria.azur.js');
-        Galleria.run('.galleria', {responsive:true, height:0.8, debug:false});
-    }());
-</script>
-{% endblock %}
+
 {% block body %}
-<div class="container">
-  <div class="galleria" style = "height: auto;">
+
+<div style = "padding-top: 70px;">
+  
     {% for image in images %}
     
-        <img src={{ url_for('static', filename='images/') }}{{image}} style="width: 30%;">
+        <img class = "img-fluid img-thumbnail" src={{ url_for('static', filename='images/') }}{{image}} style="width: 30%;">
     
     {% endfor %}
-  </div>
 </div>
 
 
