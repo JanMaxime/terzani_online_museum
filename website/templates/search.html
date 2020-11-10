@@ -20,14 +20,12 @@
     <form action="#" method = "POST">
         <div class="form-group">
           <input class="form-control" placeholder="Item" name="item" value = "{{item}}" required/>
-        </div>
-        <div class="form-check">
           <a class="btn btn-primary" data-toggle="collapse" href="#advancedSettings" role="button" aria-expanded="false">
             Advanced settings
           </a>
             <div class = "collapse " id="advancedSettings">
-              <input type="checkbox" class="form-check-input float-right" name="display_full" {% if display_full%}checked{%endif%}>
-              <label class="form-check-label" >Display full images</label >
+              <input type="checkbox" class="form-check-input float-right" name="display_bb" {% if display_bb%}checked{%endif%}>
+              <label class="form-check-label" >Only show bounding box</label >
             </div>
            
           </div>
