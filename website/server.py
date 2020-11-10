@@ -28,7 +28,7 @@ def gallery():
 def search_page():
 	iiif_and_links = []
 	number_of_boxes = 0
-	display_full = False
+	display_bb = False
 	item = ""
 	if request.method == "POST":
 		item = request.form["item"]
@@ -42,7 +42,7 @@ def search_page():
 			number_of_boxes += len(new_item[1])
 			iiif_and_links.append(new_item)
 			
-	return render_template("search.html", results = iiif_and_links, number_of_boxes=number_of_boxes, display_bb = display_bb, item=item)
+	return render_template("search.html", results = iiif_and_links, number_of_boxes=number_of_boxes, display_bb = display_bb, item=item, cold_start = request.method == "GET")
 
 
 if __name__ == "__main__":
