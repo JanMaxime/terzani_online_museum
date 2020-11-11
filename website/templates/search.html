@@ -61,16 +61,17 @@
   </div>
 </div>
 {% if results|length > 0%}
-<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0"> {{number_of_boxes}} Results {% if not display_full %}on {{results|length}} images{%endif%}</h1>
+<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0"> {{number_of_results}} Results {% if display_bb %}on {{results|length}} images{%endif%}</h1>
 <hr class="mt-2 mb-5">
 <div class="row text-center text-lg-left">
   {% for iiif_and_links in results %}
     {% for link in iiif_and_links[1] %}
 
-    {% if display_full %}
-    <div class="col-12">
-    {% else %}
+    {% if display_bb %}
     <div class="col-lg-4 col-md-6 col-12">
+
+    {% else %}
+    <div class="col-12"></div>
     {%endif%}
 
         <a  href="#iiif" class="d-block mb-4 h-100 open-iiif" data-iiif="{{iiif_and_links[0]}}" data-toggle="modal">
