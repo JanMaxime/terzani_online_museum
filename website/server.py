@@ -27,22 +27,27 @@ def gallery():
 @app.route("/search", methods=["GET", "POST"])
 def search_page():
 	iiif_and_links = []
-	number_of_boxes = 0
-	display_full = False
+	number_of_results = 0
+	display_bb = False
 	item = ""
 	if request.method == "POST":
 		item = request.form["item"]
-		photos = search_item_in_database(item, sample_annotations)
-		display_full = request.form.get("display_full", False)
-		for photo in photos:
-			if display_full:
-				new_item = (json.dumps(photo["iiif"]), [photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/full/max/0/default.jpg"])
-			else:
+		display_bb = request.form.get("display_bb", False)
+
+		if not display_bb:
+			photos = search_bb_and_tags(item, sample_annotations)
+			for photo in photos:
+				new_item = (json.dumps(photo["iiif"]), [photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/full/,1080/0/default.jpg"])
+				number_of_results += len(new_item[1])
+				iiif_and_links.append(new_item)
+		else:
+			photos = search_bb(item, sample_annotations)
+			for photo in photos:
 				new_item = (json.dumps(photo["iiif"]), [photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/" + str (box[0]) + "," + str (box[1]) + "," +str (box[2]) + "," + str (box[3]) + "/max/0/default.jpg" for box in photo["obj_boxes"][request.form["item"]]])
-			number_of_boxes += len(new_item[1])
-			iiif_and_links.append(new_item)
-			
-	return render_template("search.html", results = iiif_and_links, number_of_boxes=number_of_boxes, display_full = display_full, item=item)
+				number_of_results += len(new_item[1])
+				iiif_and_links.append(new_item)
+		
+	return render_template("search.html", results = iiif_and_links, number_of_results=number_of_results, display_bb = display_bb, item=item, cold_start = request.method == "GET")
 
 
 if __name__ == "__main__":
