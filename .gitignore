@@ -292,3 +292,4 @@ $RECYCLE.BIN/
 .history
 data_processing/annotated_images.json
 data_processing/failed_images.json
+data_processing/tagged_images.json
