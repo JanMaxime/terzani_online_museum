@@ -1,0 +1,580 @@
+{
+    "room": [
+        "F26_148_recto",
+        "T6_155_recto",
+        "T6_163_recto",
+        "T10_79_recto",
+        "F26_105_recto",
+        "T35_49_recto"
+    ],
+    "stock": [
+        "F26_148_recto",
+        "T43_7_recto",
+        "T4_157_recto",
+        "F25_164_recto",
+        "F25_155_recto",
+        "T6_155_recto",
+        "T42_130_recto",
+        "Cina5_193_recto",
+        "F27_180_recto",
+        "T42_203_recto",
+        "T6_163_recto",
+        "Cina7_83_recto",
+        "T10_79_recto",
+        "T36_12_recto",
+        "T55_55_recto",
+        "F26_105_recto"
+    ],
+    "photograph": [
+        "F26_148_recto",
+        "T43_7_recto",
+        "T4_157_recto",
+        "T4_122_recto",
+        "F25_155_recto",
+        "T6_155_recto",
+        "Cina5_193_recto",
+        "F27_180_recto",
+        "T6_163_recto",
+        "T10_79_recto",
+        "T62_20_recto",
+        "T21_71_recto",
+        "T36_12_recto",
+        "T55_55_recto",
+        "F26_105_recto",
+        "T35_49_recto"
+    ],
+    "blackandwhit": [
+        "F26_148_recto",
+        "T43_7_recto",
+        "T4_157_recto",
+        "T4_122_recto",
+        "F25_164_recto",
+        "F25_155_recto",
+        "T6_155_recto",
+        "T42_130_recto",
+        "Cina5_193_recto",
+        "F27_180_recto",
+        "T42_203_recto",
+        "T6_163_recto",
+        "Cina7_83_recto",
+        "T10_79_recto",
+        "T62_20_recto",
+        "T21_71_recto",
+        "T36_12_recto",
+        "T55_55_recto",
+        "F26_105_recto",
+        "T35_49_recto"
+    ],
+    "art": [
+        "F26_148_recto",
+        "F25_164_recto",
+        "T6_155_recto",
+        "T55_55_recto"
+    ],
+    "photographi": [
+        "F26_148_recto",
+        "T43_7_recto",
+        "T4_157_recto",
+        "T4_122_recto",
+        "F25_164_recto",
+        "F25_155_recto",
+        "T6_155_recto",
+        "T42_130_recto",
+        "Cina5_193_recto",
+        "F27_180_recto",
+        "T42_203_recto",
+        "T6_163_recto",
+        "Cina7_83_recto",
+        "T10_79_recto",
+        "T62_20_recto",
+        "T21_71_recto",
+        "T36_12_recto",
+        "T55_55_recto",
+        "F26_105_recto",
+        "T35_49_recto"
+    ],
+    "person": [
+        "F26_148_recto",
+        "T43_7_recto",
+        "T4_157_recto",
+        "T4_122_recto",
+        "T42_130_recto",
+        "Cina5_193_recto",
+        "F27_180_recto",
+        "T6_163_recto",
+        "T10_79_recto",
+        "T21_71_recto",
+        "T36_12_recto",
+        "T35_49_recto"
+    ],
+    "footwear": [
+        "F26_148_recto"
+    ],
+    "luggag": [
+        "F26_148_recto"
+    ],
+    "bag": [
+        "F26_148_recto"
+    ],
+    "coat": [
+        "F26_148_recto"
+    ],
+    "anim": [
+        "F26_148_recto"
+    ],
+    "snapshot": [
+        "T43_7_recto",
+        "T4_157_recto",
+        "T4_122_recto",
+        "T42_130_recto",
+        "Cina5_193_recto",
+        "F27_180_recto",
+        "T6_163_recto",
+        "Cina7_83_recto",
+        "T10_79_recto",
+        "T36_12_recto",
+        "F26_105_recto",
+        "T35_49_recto"
+    ],
+    "monochrom": [
+        "T43_7_recto",
+        "T4_157_recto",
+        "T4_122_recto",
+        "F25_155_recto",
+        "T6_155_recto",
+        "T42_130_recto",
+        "Cina5_193_recto",
+        "F27_180_recto",
+        "T42_203_recto",
+        "T6_163_recto",
+        "Cina7_83_recto",
+        "T10_79_recto",
+        "T62_20_recto",
+        "T36_12_recto",
+        "F26_105_recto"
+    ],
+    "cloth": [
+        "T43_7_recto",
+        "T4_122_recto",
+        "T42_130_recto",
+        "Cina5_193_recto",
+        "T6_163_recto",
+        "T10_79_recto",
+        "T36_12_recto",
+        "T35_49_recto"
+    ],
+    "ece tlle\nteak ete\nii\nd_llna\nglnlang\n": [
+        "T43_7_recto"
+    ],
+    "ece": [
+        "T43_7_recto"
+    ],
+    "tlle": [
+        "T43_7_recto"
+    ],
+    "teak": [
+        "T43_7_recto"
+    ],
+    "ete": [
+        "T43_7_recto"
+    ],
+    "ii": [
+        "T43_7_recto"
+    ],
+    "d_llna": [
+        "T43_7_recto"
+    ],
+    "glnlang": [
+        "T43_7_recto"
+    ],
+    "adapt": [
+        "T4_157_recto",
+        "F25_164_recto",
+        "T6_163_recto",
+        "T10_79_recto"
+    ],
+    "stand": [
+        "T4_157_recto",
+        "Cina5_193_recto",
+        "F27_180_recto"
+    ],
+    "phenomenon": [
+        "T4_157_recto"
+    ],
+    "atmospher": [
+        "T4_157_recto"
+    ],
+    "pant": [
+        "T4_157_recto",
+        "F27_180_recto"
+    ],
+    "hair": [
+        "T4_122_recto"
+    ],
+    "moustach": [
+        "T4_122_recto"
+    ],
+    "facial": [
+        "T4_122_recto"
+    ],
+    "portrait": [
+        "T4_122_recto",
+        "F27_180_recto",
+        "T6_163_recto"
+    ],
+    "forehead": [
+        "T4_122_recto"
+    ],
+    "outerwear": [
+        "T4_122_recto",
+        "F27_180_recto",
+        "T6_163_recto"
+    ],
+    "histori": [
+        "F25_164_recto",
+        "F25_155_recto",
+        "T10_79_recto",
+        "T21_71_recto"
+    ],
+    "build": [
+        "F25_164_recto",
+        "F25_155_recto",
+        "T42_203_recto",
+        "T62_20_recto",
+        "T36_12_recto"
+    ],
+    "site": [
+        "F25_155_recto"
+    ],
+    "canal": [
+        "F25_155_recto"
+    ],
+    "histor": [
+        "F25_155_recto"
+    ],
+    "architectur": [
+        "F25_155_recto",
+        "T42_203_recto",
+        "T62_20_recto",
+        "T36_12_recto",
+        "F26_105_recto"
+    ],
+    "waterway": [
+        "F25_155_recto"
+    ],
+    "frame": [
+        "F25_155_recto",
+        "T6_155_recto",
+        "T6_163_recto"
+    ],
+    "pictur": [
+        "F25_155_recto",
+        "T6_155_recto",
+        "T6_163_recto"
+    ],
+    "paper": [
+        "T6_155_recto"
+    ],
+    "visual": [
+        "T6_155_recto"
+    ],
+    "still": [
+        "T6_155_recto",
+        "Cina7_83_recto",
+        "T55_55_recto"
+    ],
+    "life": [
+        "T6_155_recto",
+        "Cina7_83_recto",
+        "T55_55_recto"
+    ],
+    "style": [
+        "T42_130_recto",
+        "F27_180_recto",
+        "T36_12_recto"
+    ],
+    "crew": [
+        "T42_130_recto",
+        "T21_71_recto"
+    ],
+    "hat": [
+        "T42_130_recto",
+        "T21_71_recto",
+        "T35_49_recto"
+    ],
+    "c gi qu\u00fd h\u01a1n \u0111\u1ed1c-l\u1eadp t\u1eeb-do!\n": [
+        "T42_130_recto"
+    ],
+    "c": [
+        "T42_130_recto"
+    ],
+    "gi": [
+        "T42_130_recto"
+    ],
+    "qu\u00fd": [
+        "T42_130_recto"
+    ],
+    "h\u01a1n": [
+        "T42_130_recto"
+    ],
+    "\u0111\u1ed1c-l\u1eadp": [
+        "T42_130_recto"
+    ],
+    "t\u1eeb-do!": [
+        "T42_130_recto"
+    ],
+    "street": [
+        "Cina5_193_recto",
+        "Cina7_83_recto"
+    ],
+    "tree": [
+        "Cina5_193_recto",
+        "T36_12_recto"
+    ],
+    "hous": [
+        "Cina5_193_recto",
+        "T62_20_recto"
+    ],
+    "tablewar": [
+        "Cina5_193_recto"
+    ],
+    "v030\n": [
+        "Cina5_193_recto"
+    ],
+    "v030": [
+        "Cina5_193_recto"
+    ],
+    "glass": [
+        "F27_180_recto"
+    ],
+    "furnitur": [
+        "F27_180_recto",
+        "F26_105_recto"
+    ],
+    "1986\n209\n1777\n1684\n1552\n421\n145\nhakue\n": [
+        "F27_180_recto"
+    ],
+    "1986": [
+        "F27_180_recto"
+    ],
+    "209": [
+        "F27_180_recto"
+    ],
+    "1777": [
+        "F27_180_recto"
+    ],
+    "1684": [
+        "F27_180_recto"
+    ],
+    "1552": [
+        "F27_180_recto"
+    ],
+    "421": [
+        "F27_180_recto"
+    ],
+    "145": [
+        "F27_180_recto"
+    ],
+    "hakue": [
+        "F27_180_recto"
+    ],
+    "vehicl": [
+        "T42_203_recto",
+        "Cina7_83_recto"
+    ],
+    "ship": [
+        "T42_203_recto"
+    ],
+    "cloud": [
+        "T42_203_recto"
+    ],
+    "passeng": [
+        "T42_203_recto"
+    ],
+    "sky": [
+        "T42_203_recto"
+    ],
+    "927\ncaution\nch\u00fa-\u00fd\nsteady red_ stop\n\u0111\u1ebfn \u0111\u00f3 ng\u01b0ng l\u1ea1i\nflashing red_ stop\njf clear go\n\u0111en ch\u1edbp \u0111\u00f3 quan-sat hay \u0111i\n": [
+        "T42_203_recto"
+    ],
+    "927": [
+        "T42_203_recto"
+    ],
+    "caution": [
+        "T42_203_recto"
+    ],
+    "ch\u00fa-\u00fd": [
+        "T42_203_recto"
+    ],
+    "steady": [
+        "T42_203_recto"
+    ],
+    "red_": [
+        "T42_203_recto"
+    ],
+    "stop": [
+        "T42_203_recto"
+    ],
+    "\u0111\u1ebfn": [
+        "T42_203_recto"
+    ],
+    "\u0111\u00f3": [
+        "T42_203_recto"
+    ],
+    "ng\u01b0ng": [
+        "T42_203_recto"
+    ],
+    "l\u1ea1i": [
+        "T42_203_recto"
+    ],
+    "flashing": [
+        "T42_203_recto"
+    ],
+    "jf": [
+        "T42_203_recto"
+    ],
+    "clear": [
+        "T42_203_recto"
+    ],
+    "go": [
+        "T42_203_recto"
+    ],
+    "\u0111en": [
+        "T42_203_recto"
+    ],
+    "ch\u1edbp": [
+        "T42_203_recto"
+    ],
+    "quan-sat": [
+        "T42_203_recto"
+    ],
+    "hay": [
+        "T42_203_recto"
+    ],
+    "\u0111i": [
+        "T42_203_recto"
+    ],
+    "1tot\n": [
+        "T6_163_recto"
+    ],
+    "1tot": [
+        "T6_163_recto"
+    ],
+    "bicycl": [
+        "Cina7_83_recto"
+    ],
+    "wheel": [
+        "Cina7_83_recto",
+        "F26_105_recto"
+    ],
+    "tire": [
+        "Cina7_83_recto"
+    ],
+    "\u56cd\n\u56cd\n0402192\n11657228\n": [
+        "Cina7_83_recto"
+    ],
+    "\u56cd": [
+        "Cina7_83_recto"
+    ],
+    "0402192": [
+        "Cina7_83_recto"
+    ],
+    "11657228": [
+        "Cina7_83_recto"
+    ],
+    "peopl": [
+        "T10_79_recto"
+    ],
+    "facad": [
+        "T62_20_recto"
+    ],
+    "black": [
+        "T62_20_recto"
+    ],
+    "white": [
+        "T62_20_recto",
+        "F26_105_recto"
+    ],
+    "window": [
+        "T62_20_recto"
+    ],
+    "door": [
+        "T62_20_recto"
+    ],
+    "6v0\n": [
+        "T62_20_recto"
+    ],
+    "6v0": [
+        "T62_20_recto"
+    ],
+    "headgear": [
+        "T21_71_recto"
+    ],
+    "uniform": [
+        "T21_71_recto",
+        "T35_49_recto"
+    ],
+    "sailor": [
+        "T21_71_recto"
+    ],
+    "team": [
+        "T21_71_recto"
+    ],
+    "ducado": [
+        "T21_71_recto"
+    ],
+    "tie": [
+        "T21_71_recto"
+    ],
+    "coronel\nbilladas\ngotangogan\n": [
+        "T21_71_recto"
+    ],
+    "coronel": [
+        "T21_71_recto"
+    ],
+    "billadas": [
+        "T21_71_recto"
+    ],
+    "gotangogan": [
+        "T21_71_recto"
+    ],
+    "carv": [
+        "T55_55_recto"
+    ],
+    "stone": [
+        "T55_55_recto"
+    ],
+    "sculptur": [
+        "T55_55_recto"
+    ],
+    "statu": [
+        "T55_55_recto"
+    ],
+    "classic": [
+        "T55_55_recto"
+    ],
+    "chef": [
+        "T35_49_recto"
+    ],
+    "chief": [
+        "T35_49_recto"
+    ],
+    "cook": [
+        "T35_49_recto"
+    ],
+    "s": [
+        "T35_49_recto"
+    ],
+    "\u306b\u3057\u3072\u3089\n%3d\nfrance\n": [
+        "T35_49_recto"
+    ],
+    "\u306b\u3057\u3072\u3089": [
+        "T35_49_recto"
+    ],
+    "%3d": [
+        "T35_49_recto"
+    ],
+    "france": [
+        "T35_49_recto"
+    ]
+}
