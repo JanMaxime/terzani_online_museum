@@ -13,8 +13,9 @@
   
     <div id="map" style="width: 600px; height: 400px"></div>
 
-</div>    
+    <div id = "displayImages"></div>
 
+</div>    
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
     <script>
@@ -72,24 +73,26 @@
                     info.update();
                 }
 
-                function zoomToFeature(e) {
-                    map.fitBounds(e.target.getBounds());
+                function getPhotos(e) {
+                    console.log(e.target.feature.properties.name)
+                    $.ajax({
+                        url: "/gallery",
+                        type: "POST",
+                        data: {"country": e.target.feature.properties.name},
+                        success: function(response) {
+                            $('div#displayImages').html(response.data) ;
+                        },
+                    });     
                 }
 
                 function onEachFeature(feature, layer) {
                     layer.on({
                         mouseover: highlightFeature,
                         mouseout: resetHighlight,
-                        click: zoomToFeature
+                        click: getPhotos
                     });
                 }
-                function onEachFeature(feature, layer) {
-                    layer.on({
-                        mouseover: highlightFeature,
-                        mouseout: resetHighlight,
-                        click: zoomToFeature
-                    });
-                }
+
 
                 geojson = L.geoJson(data, {
                     style: style,
@@ -112,8 +115,6 @@ info.update = function (props) {
 };
 
 info.addTo(map);
-
-
 
         })
     </script>
