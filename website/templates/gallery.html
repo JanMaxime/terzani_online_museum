@@ -25,23 +25,6 @@
 
 
     <script>
-        $("#markers").click(function(e) {
-            e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: "/gallery",
-                data: { 
-                    display_markers : true
-                },
-                success: function(iiif_lat_lng_name) {
-                    console.log(iiif_lat_lng_name)
-                },
-            });
-        });
-    </script>
-
-
-    <script>
         var myGeoJSONPath = 'static/geo.json';
         var myCustomStyle = {
             stroke: false,
@@ -141,7 +124,38 @@
 
                 info.addTo(map);
 
-                        })
+
+                $("#markers").click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "/gallery",
+                data: { 
+                    display_markers : true
+                },
+                success: function(response) {
+                    console.log(response["iiif_lat_lng_name"])
+                    for(i = 0 ; i < response["iiif_lat_lng_name"].length ; i++){
+                        console.log(response["iiif_lat_lng_name"][i])
+                        var name = Object.keys(response["iiif_lat_lng_name"][i][1])[0]
+                        var lat = response["iiif_lat_lng_name"][i][1][name]["latitude"]
+                        var lng = response["iiif_lat_lng_name"][i][1][name]["longitude"]
+                        var iiif = response["iiif_lat_lng_name"][i][0]
+
+                        var marker = new L.marker([lat, lng]).addTo(map)
+                        marker.bindPopup('<h1>'+name+'</h1><img class="img-fluid img-thumbnail" src="'+iiif["images"][0]["resource"]["@id"]+'">')
+                    }
+
+                },
+            });
+        });
+
+            })
+
+
+
+
+                        
     </script>
 
 </div>
