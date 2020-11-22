@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, request
+from flask import Flask, redirect, url_for, render_template, request, jsonify
 from flask_pymongo import PyMongo
 import os
 import json
@@ -12,16 +12,27 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 sample_annotations = mongo.db["sample_annotations"]
 
-images = ["cini"+ str(x) + "_d.png" for x in range(1,11)]
-
 
 @app.route("/")
 def home():
 	return render_template("home.html")
 
-@app.route("/gallery")
+@app.route("/gallery", methods=["GET", "POST"])
 def gallery():
-	return render_template("gallery.html", images=images)
+	iiifs_and_links = []
+	if request.method == "POST":
+		display_markers = request.form.get("display_markers", False)
+		if display_markers:
+			results = get_markers(sample_annotations)
+			iiif_lat_lng_name = [(result["annotation"]["iiif"], result["annotation"]["landmark_info"]) for result in results]
+			print(iiif_lat_lng_name)
+			return jsonify({"iiif_lat_lng_name" : iiif_lat_lng_name})
+		else:
+			results = search_country(request.form["country"], sample_annotations)
+			iiifs_and_links = [(result["annotation"]["iiif"], result["annotation"]["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/full/,1080/0/default.jpg") for result in results]
+			return jsonify({"data" : render_template("display_images.html", iiifs_and_links=iiifs_and_links)})
+
+	return render_template("gallery.html")
 
 
 @app.route("/search", methods=["GET", "POST"])
