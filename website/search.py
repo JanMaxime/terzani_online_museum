@@ -9,3 +9,7 @@ def search_bb(item, collection):
 
 def search_country(country, collection):
     return list(collection.find({ "annotation.country" : country}))
+
+    
+def get_markers(collection):
+    return list(collection.find({"annotation.landmark_info" : {"$exists" : True}}))

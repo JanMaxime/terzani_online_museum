@@ -15,9 +15,32 @@
 
     <div id = "displayImages"></div>
 
+    <button id="markers" class="btn btn-primary" data-toggle="collapse">
+        Show markers
+    </button>
+
 </div>    
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+
+
+    <script>
+        $("#markers").click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "/gallery",
+                data: { 
+                    display_markers : true
+                },
+                success: function(iiif_lat_lng_name) {
+                    console.log(iiif_lat_lng_name)
+                },
+            });
+        });
+    </script>
+
+
     <script>
         var myGeoJSONPath = 'static/geo.json';
         var myCustomStyle = {
@@ -26,6 +49,7 @@
             fillColor: '#fff',
             fillOpacity: 1
         }
+
         $.getJSON(myGeoJSONPath,function(data){
             var mapboxAccessToken = "pk.eyJ1IjoidG9rb25vbW8iLCJhIjoiY2toaTY1M3Y0MG9qNDJzcDlnbzJoZTI4ZyJ9.FwqCfi82ZxqeitStLwtkWA";
             var map = L.map('map').setView([25.74739, 105], 3);
@@ -78,7 +102,8 @@
                     $.ajax({
                         url: "/gallery",
                         type: "POST",
-                        data: {"country": e.target.feature.properties.name},
+                        data: {"country": e.target.feature.properties.name,
+                                "display_markers" : false},
                         success: function(response) {
                             $('div#displayImages').html(response.data) ;
                         },
@@ -101,22 +126,22 @@
 
                 var info = L.control();
 
-info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-    this.update();
-    return this._div;
-};
+                info.onAdd = function (map) {
+                    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+                    this.update();
+                    return this._div;
+                };
 
-// method that we will use to update the control based on feature properties passed
-info.update = function (props) {
-    this._div.innerHTML = '<h4>Country</h4>' +  (props ?
-        '<b>' + props.name + '</b><br />'
-        : 'Hover a country');
-};
+                // method that we will use to update the control based on feature properties passed
+                info.update = function (props) {
+                    this._div.innerHTML = '<h4>Country</h4>' +  (props ?
+                        '<b>' + props.name + '</b><br />'
+                        : 'Hover a country');
+                };
 
-info.addTo(map);
+                info.addTo(map);
 
-        })
+                        })
     </script>
 
 </div>
