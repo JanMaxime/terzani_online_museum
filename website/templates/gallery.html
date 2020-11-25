@@ -8,10 +8,10 @@
 <script>
     function goToSearch(name) {
         var form = $('<form action="/search" method="post" style="visibility: hidden;">' +
-            '<input type="text" name="item" value="' + name + '" />' +
+            '<input type="text" name="item" value="' + name + '" />  <button id="submit_button" type="submit" name="submit" value="text_search" class="btn btn-primary">Search text</button>' +
             '</form>');
         $('body').append(form);
-        form.submit();
+        $("#submit_button").click()
     }
 </script>
 {%endblock%} {% block body %}
