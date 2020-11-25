@@ -151,6 +151,7 @@ dmypy.json
 # website: http://jupyter.org/
 
 */.ipynb_checkpoints/*
+.history/
 
 # IPython
 
@@ -288,3 +289,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/python,windows,macos,linux,jupyternotebooks,flask
+data_processing/annotated_images.json
+data_processing/failed_images.json
