@@ -5,19 +5,35 @@
         background-color: #c5e8ff;
     }
 </style>
+<script>
+    function goToSearch(name) {
+        var form = $('<form action="/search" method="post" style="visibility: hidden;">' +
+            '<input type="text" name="item" value="' + name + '" />' +
+            '</form>');
+        $('body').append(form);
+        form.submit();
+    }
+</script>
 {%endblock%} {% block body %}
 
-<div class="container" style="padding-top: 70px;">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 border-right">
+            <div class="sticky-top">
+                <div id="map" style="width: 500px; height: 400px"></div>
 
-    <div id="map" style="width: 600px; height: 400px"></div>
+                <button id="markers" class="btn btn-primary" data-toggle="collapse">Show landmarks</button>
+                </button>
+            </div>
+        </div>
+        <div class="col-8 col-offset-1">
+            <div id="displayImages"></div>
+        </div>
 
-    <div id="displayImages"></div>
-
-    <button id="markers" class="btn btn-primary" data-toggle="collapse">
-        Show markers
-    </button>
-
+    </div>
 </div>
+
+
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
 
@@ -79,13 +95,11 @@
         }
 
         function getPhotos(e) {
-            console.log(e.target.feature.properties.name)
             $.ajax({
                 url: "/gallery",
                 type: "POST",
                 data: {
                     "country": e.target.feature.properties.name,
-                    "display_markers": false
                 },
                 success: function(response) {
                     $('div#displayImages').html(response.data);
@@ -125,6 +139,7 @@
         info.addTo(map);
 
 
+
         $("#markers").click(function(e) {
             e.preventDefault();
             $.ajax({
@@ -139,31 +154,12 @@
                         var lat = response["lat_lng_name"][i][name]["latitude"]
                         var lng = response["lat_lng_name"][i][name]["longitude"]
                         var marker = new L.marker([lat, lng]).addTo(map)
-                        marker.bindPopup('<h1>' + name + '<button class="search_photos" value="' + name + '"class="btn btn-primary" data-toggle="collapse">Photos</button>')
+                        marker.bindPopup('<h1>' + name + '</h1><button class="btn btn-primary search_photos" value="' + name + '" onClick="goToSearch(this.value)">Search Photos</button>')
                     }
                 },
             });
         });
 
-        $(".search_photos").click(function(e) {
-            e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: "/search",
-                data: {
-
-                },
-                success: function(response) {
-                    for (i = 0; i < response["lat_lng_name"].length; i++) {
-                        var name = Object.keys(response["lat_lng_name"][i])[0]
-                        var lat = response["lat_lng_name"][i][name]["latitude"]
-                        var lng = response["lat_lng_name"][i][name]["longitude"]
-                        var marker = new L.marker([lat, lng]).addTo(map)
-                        marker.bindPopup('<h1>' + name + '<button id="search_photos" value="' + name + '"class="btn btn-primary" data-toggle="collapse">Photos</button>')
-                    }
-                },
-            });
-        });
 
     })
 </script>
