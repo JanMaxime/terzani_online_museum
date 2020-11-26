@@ -79,4 +79,3 @@ def search_country(country, collection):
     
 def get_markers(collection):
     return list(collection.find({"annotation.landmark_info" : {"$exists" : True}}))
-
