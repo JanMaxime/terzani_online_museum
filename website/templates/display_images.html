@@ -1,0 +1,8 @@
+ {% for iiif_and_link in iiifs_and_links %}
+
+<a href="#iiif" class="col-3 open-iiif" data-iiif="{{iiif_and_link[0]}}" data-toggle="modal">
+    <img class="img-fluid img-thumbnail" src="{{iiif_and_link[1]}}">
+</a>
+
+
+{%endfor%}
