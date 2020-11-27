@@ -2,3 +2,7 @@ flask
 Flask-PyMongo
 dnspython
 nltk
+dotenv
+google-cloud-vision
+bs4
+urllib
