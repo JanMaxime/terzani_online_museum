@@ -1,1949 +1,869 @@
 {
-    "photograph": [
-        "T6_65_recto",
-        "T4_63_recto",
-        "T14_152_recto",
-        "T35_167_recto",
-        "T14_74_recto",
-        "T6_169_recto",
-        "T36_59_recto",
-        "F27_85_recto",
-        "T42_205_recto",
-        "T48_106_recto",
-        "T10_152_recto",
-        "T60_169_recto",
-        "T11_191_recto",
-        "F20_102_recto",
-        "T42_215_recto",
-        "Cina8_360_recto",
-        "Cina8_107_recto",
-        "F27_70_recto",
-        "Cina8_364_recto",
-        "T63_69_recto",
-        "F22_49_recto",
-        "F20_444_recto",
-        "Cina6_9_recto",
-        "T34_40_recto",
-        "T36_20_recto",
-        "T10_173_recto",
-        "T10_125_recto",
-        "T12_43_recto"
-    ],
-    "blackandwhit": [
-        "T6_65_recto",
-        "T4_63_recto",
-        "T14_152_recto",
-        "T35_167_recto",
-        "T14_74_recto",
-        "Cina5_123_recto",
-        "T6_169_recto",
-        "T36_59_recto",
-        "F26_57_recto",
-        "F27_85_recto",
-        "F27_110_recto",
-        "T42_205_recto",
-        "T48_106_recto",
-        "T10_152_recto",
-        "T60_169_recto",
-        "T11_191_recto",
-        "T42_215_recto",
-        "Cina8_107_recto",
-        "F27_70_recto",
-        "T55_13_recto",
-        "Cina8_364_recto",
-        "T63_69_recto",
-        "F22_49_recto",
-        "Cina6_9_recto",
-        "T14_77_recto",
-        "T34_40_recto",
-        "T11_13_recto",
-        "T36_20_recto",
-        "F56_33_recto",
-        "T10_173_recto",
-        "T10_125_recto",
-        "T12_43_recto"
-    ],
-    "photographi": [
-        "T6_65_recto",
-        "T4_63_recto",
-        "T14_152_recto",
-        "T35_167_recto",
-        "T14_74_recto",
-        "Cina5_123_recto",
-        "T6_169_recto",
-        "T36_59_recto",
-        "F26_57_recto",
-        "F27_85_recto",
-        "F27_110_recto",
-        "T42_205_recto",
-        "T48_106_recto",
-        "T10_152_recto",
-        "T60_169_recto",
-        "T11_191_recto",
-        "F20_102_recto",
-        "T42_215_recto",
-        "Cina8_360_recto",
-        "Cina8_107_recto",
-        "F27_70_recto",
-        "T55_13_recto",
-        "Cina8_364_recto",
-        "T63_69_recto",
-        "F22_49_recto",
-        "F20_444_recto",
-        "Cina6_9_recto",
-        "F20_182_recto",
-        "T14_77_recto",
-        "F20_334_recto",
-        "F56_21_recto",
-        "T34_40_recto",
-        "T11_13_recto",
-        "T36_20_recto",
-        "F56_33_recto",
-        "T10_173_recto",
-        "T10_125_recto",
-        "T12_43_recto"
-    ],
-    "photo": [
-        "T6_65_recto",
-        "T14_152_recto"
+    "monochrom": [
+        "F25_125_recto",
+        "T41_48_recto",
+        "Cina5_350_recto",
+        "T62_10_recto",
+        "Cina5_254_recto",
+        "F19_157_recto",
+        "T4_9_recto",
+        "T41_135_recto",
+        "T31_6_recto",
+        "T63_45_recto",
+        "T5_4_recto",
+        "T12_144_recto",
+        "F25_121_recto",
+        "F19_27_recto",
+        "Cina5_331_recto",
+        "T35_220_recto",
+        "T27_3_recto",
+        "T36_34_recto",
+        "F26_117_recto",
+        "F56_17_recto",
+        "T10_104_recto",
+        "F19_189_recto",
+        "T11_180_recto",
+        "T10_96_recto",
+        "Cina4_34_recto",
+        "T27_16_recto",
+        "F19_62_recto",
+        "T5_56_recto"
     ],
     "snapshot": [
-        "T6_65_recto",
-        "T4_63_recto",
-        "T14_152_recto",
-        "T35_167_recto",
-        "T14_74_recto",
-        "T6_169_recto",
-        "T36_59_recto",
-        "F26_57_recto",
-        "F27_85_recto",
-        "T42_205_recto",
-        "T48_106_recto",
-        "T60_169_recto",
-        "T11_191_recto",
-        "F20_102_recto",
-        "T42_215_recto",
-        "Cina8_360_recto",
-        "Cina8_107_recto",
-        "F27_70_recto",
-        "Cina8_364_recto",
-        "T63_69_recto",
-        "F22_49_recto",
-        "F20_444_recto",
-        "Cina6_9_recto",
-        "T14_77_recto",
-        "F20_334_recto",
-        "T34_40_recto",
-        "T36_20_recto",
-        "T10_173_recto",
-        "T10_125_recto",
-        "T12_43_recto"
-    ],
-    "poster": [
-        "T6_65_recto",
-        "T6_169_recto"
-    ],
-    "stock": [
-        "T6_65_recto",
-        "T4_63_recto",
-        "T14_152_recto",
-        "T35_167_recto",
-        "T14_74_recto",
-        "T6_169_recto",
-        "T36_59_recto",
-        "F26_57_recto",
-        "T42_205_recto",
-        "T10_152_recto",
-        "T60_169_recto",
-        "T11_191_recto",
-        "Cina8_107_recto",
-        "T55_13_recto",
-        "Cina8_364_recto",
-        "T63_69_recto",
-        "F22_49_recto",
-        "F20_444_recto",
-        "Cina6_9_recto",
-        "F20_182_recto",
-        "F20_334_recto",
-        "F56_21_recto",
-        "T34_40_recto",
-        "T11_13_recto",
-        "T36_20_recto",
-        "F56_33_recto",
-        "T10_173_recto"
-    ],
-    "caption": [
-        "T6_65_recto",
-        "T14_152_recto"
-    ],
-    "art": [
-        "T6_65_recto",
-        "F26_57_recto",
-        "F56_21_recto",
-        "T11_13_recto",
-        "T36_20_recto",
-        "F56_33_recto",
-        "T10_173_recto"
-    ],
-    "person": [
-        "T6_65_recto",
-        "T42_1_recto",
-        "T14_152_recto",
-        "T35_167_recto",
-        "T14_74_recto",
-        "T6_169_recto",
-        "T36_59_recto",
-        "F26_57_recto",
-        "T42_205_recto",
-        "T48_106_recto",
-        "T60_169_recto",
-        "T11_191_recto",
-        "F20_102_recto",
-        "T42_215_recto",
-        "Cina8_360_recto",
-        "Cina8_107_recto",
-        "F27_70_recto",
-        "T55_13_recto",
-        "Cina8_364_recto",
-        "T63_69_recto",
-        "F22_49_recto",
-        "F20_444_recto",
-        "Cina6_9_recto",
-        "F20_334_recto",
-        "T20_109_recto",
-        "T36_20_recto",
-        "T10_173_recto"
-    ],
-    "\u0935\u093f \u092c\u091a\u093e\u0913\u0902\u0901 \u0906\u0928\u094d\u0926\u093e\u0932\u0917\n\u093f\u0939\u0930\u0940\n\u0917\u0922\u093c\u0935\u093e\u0932\n\u093e\u094d\u092f \u0935\u093e\n": [
-        "T6_65_recto"
-    ],
-    "\u0935\u093f": [
-        "T6_65_recto"
-    ],
-    "\u092c\u091a\u093e\u0913\u0902\u0901": [
-        "T6_65_recto"
-    ],
-    "\u0906\u0928\u094d\u0926\u093e\u0932\u0917": [
-        "T6_65_recto"
-    ],
-    "\u093f\u0939\u0930\u0940": [
-        "T6_65_recto"
-    ],
-    "\u0917\u0922\u093c\u0935\u093e\u0932": [
-        "T6_65_recto"
-    ],
-    "\u093e\u094d\u092f": [
-        "T6_65_recto"
-    ],
-    "\u0935\u093e": [
-        "T6_65_recto"
-    ],
-    "offic": [
-        "T42_1_recto",
-        "F22_49_recto"
-    ],
-    "militari": [
-        "T42_1_recto",
-        "F22_49_recto"
-    ],
-    "vehicl": [
-        "T42_1_recto",
-        "T48_106_recto",
-        "T11_191_recto",
-        "Cina8_360_recto"
-    ],
-    "noncommiss": [
-        "T42_1_recto"
-    ],
-    "uniform": [
-        "T42_1_recto",
-        "F22_49_recto"
-    ],
-    "tank": [
-        "T42_1_recto"
-    ],
-    "armi": [
-        "T42_1_recto"
-    ],
-    "combat": [
-        "T42_1_recto"
-    ],
-    "40\nmay\n72\n": [
-        "T42_1_recto"
-    ],
-    "40": [
-        "T42_1_recto"
-    ],
-    "may": [
-        "T42_1_recto"
-    ],
-    "72": [
-        "T42_1_recto"
-    ],
-    "black": [
-        "T4_63_recto",
-        "Cina6_9_recto",
-        "T34_40_recto",
-        "T10_125_recto"
-    ],
-    "monochrom": [
-        "T4_63_recto",
-        "T14_152_recto",
-        "T35_167_recto",
-        "Cina5_123_recto",
-        "T6_169_recto",
-        "T36_59_recto",
-        "F26_57_recto",
-        "F27_85_recto",
-        "F27_110_recto",
-        "T42_205_recto",
-        "T10_152_recto",
-        "T60_169_recto",
-        "T11_191_recto",
-        "Cina8_360_recto",
-        "Cina8_107_recto",
-        "F27_70_recto",
-        "T55_13_recto",
-        "Cina8_364_recto",
-        "T63_69_recto",
-        "F22_49_recto",
-        "Cina6_9_recto",
-        "T14_77_recto",
-        "T34_40_recto",
-        "T11_13_recto",
-        "T36_20_recto",
-        "T10_125_recto",
-        "T12_43_recto"
-    ],
-    "white": [
-        "T4_63_recto",
-        "T35_167_recto",
-        "F27_85_recto",
-        "T10_125_recto",
-        "T12_43_recto"
-    ],
-    "room": [
-        "T4_63_recto",
-        "T14_74_recto",
-        "T42_215_recto",
-        "T34_40_recto",
-        "T11_13_recto"
-    ],
-    "frame": [
-        "T4_63_recto",
-        "T14_74_recto",
-        "T10_152_recto",
-        "T55_13_recto",
-        "T11_13_recto",
-        "T36_20_recto",
-        "F56_33_recto",
-        "T10_125_recto",
-        "T12_43_recto"
-    ],
-    "pictur": [
-        "T4_63_recto",
-        "T14_74_recto",
-        "T10_152_recto",
-        "T55_13_recto",
-        "T11_13_recto",
-        "T36_20_recto",
-        "F56_33_recto",
-        "T10_125_recto",
-        "T12_43_recto"
-    ],
-    "adapt": [
-        "T14_152_recto",
-        "F26_57_recto",
-        "T60_169_recto",
-        "T55_13_recto",
-        "Cina8_364_recto",
-        "F20_444_recto",
-        "F20_334_recto"
-    ],
-    "style": [
-        "T14_152_recto",
-        "T36_59_recto",
-        "F27_110_recto",
-        "Cina8_360_recto",
-        "T14_77_recto"
-    ],
-    "tabl": [
-        "T14_152_recto",
-        "T20_109_recto"
-    ],
-    "top": [
-        "T14_152_recto",
-        "F26_57_recto"
-    ],
-    "cloth": [
-        "T14_152_recto",
-        "F26_57_recto",
-        "T42_205_recto",
-        "T42_215_recto",
-        "Cina8_107_recto",
-        "T55_13_recto",
-        "Cina8_364_recto",
-        "F20_444_recto"
-    ],
-    "portrait": [
-        "T35_167_recto",
-        "T60_169_recto"
-    ],
-    "stand": [
-        "T35_167_recto",
-        "T14_74_recto",
-        "T42_205_recto",
-        "F27_70_recto",
-        "Cina8_364_recto",
-        "T63_69_recto"
-    ],
-    "outerwear": [
-        "T35_167_recto"
-    ],
-    "hous": [
-        "T14_74_recto",
-        "T36_59_recto",
-        "T48_106_recto",
-        "T14_77_recto"
-    ],
-    "pant": [
-        "T14_74_recto",
-        "F22_49_recto"
-    ],
-    "379\n": [
-        "T14_74_recto"
-    ],
-    "379": [
-        "T14_74_recto"
-    ],
-    "text": [
-        "Cina5_123_recto",
-        "T6_169_recto",
-        "F27_85_recto"
-    ],
-    "paper": [
-        "Cina5_123_recto",
-        "T12_43_recto"
-    ],
-    "font": [
-        "Cina5_123_recto",
-        "T6_169_recto",
-        "F56_21_recto"
-    ],
-    "anim": [
-        "Cina5_123_recto",
-        "T6_169_recto",
-        "T36_59_recto",
-        "Cina6_9_recto",
-        "T12_43_recto"
-    ],
-    "\u548c\u308a\u4e5f\u662f\u5561\u4e86\u5904\u6211\u7684 \u4e0d\u662f\u8fd9\u65b9\u5403\u4e09\u5c31\u662f\u90a35\u54c8\n\u7acb\u7ed3\u7247\u4e61\u9633\u65f6,\u5728\u8981\u8ba2\u597d\u5357\u6cd5\u695a\u695a\u3002\n\u6709\u5230,\u7279\u597d\u8bba\u5207\u5236\u65f6,\u4e5f\u4eec\u5404\u79cd\u7801\u5f0f\u7684\u90a3\u53f0\u4f73f4\u4f4e\u6d3b\u53ca4 \u7ecf\u7247\u4f1a\u540c\u6642\u8981\u6cd5\u610f\u4e9b\u4ec0\u4e48\u95f4\u9898\n\u3092,\u4e2d\u6597\u53f0\u6709\u53f0\u4e1a\u751f,\u5728\u5dee\u4e00\u4e2a\u591a\u79cd\u7ef4 \u6210\u7684\u7684\u9996\u5728,\u591a\u5c42\u5927\u7684\u80fd\n\u540d\u5efa\u6784,\u6211d\u821e\u7b2c\u7684\u8ba1\u5212\u7edf\u7247\u7684\u524d\u7a0b1_\u8981\u53d1\u6837\u4e0d\u7684\u8c03\u6709\n\u6797\u4f5c\u56fe,\u53d1\u5c55\u5357\u54c1\u6d77\u8acb\u51b0\u7684\u7ea6\u6545\u52a8\u6cd5\u5916, \u5927\u9752\u56db\n\u7d20\u6027\u7247\u540d\u95f4\u81ea\u4e89\u73b0,\u9054\u65b0\u8001\u672a\u540c\u5bb9\u5229\u6709\u6253\u4e00\u4e2a\u7edf-\u9001\u8857\u7684\u5fb7\n\u540c\u6cd5\u5f8b\u5934\u52a0\u4e24uz(t42\u95f4\u6709\u5b50\u578b -\u5b9a\u4ee3,\n\u300a\u5316,\u575a\u51b3\u6253\u53bb\u53cd\u4e3a\n\u4e09\u4e3b\u5371\u8005\u793e\u4f1a\n\u8a72\u597d\u7d00\u3001\u5834\n\u8981\u5206\u5b50\n\u6210\u4f1a\u5206\n\u305d\u548c\n\u4f9d\u6cd5\u4e25\u60e9\u4e25\u91cd\u5371\u5bb3\u793e\u4f1a\u6cbb\u5b89\u7684\u72af\u7f6a\n\u6740\u4eba\u7f6a\u72af\u9648\u7acb\u6ce2\u3001\u62a2\u52ab\u6740\u4eba\u7f6a\u72af\u9648\u5fd7\u660e\u88ab\u5224\u6b7b\u5211\n:\u7ee7\u7eed\u6574\n\u6280\u3002\u8981\u91cc,\n\u8a2d\u7684\u8fde\u6cd5\u6b7b\n\u4f8d\u3001\u6d41\u5f88\u56e2\n\u6700\u50cf\u5e36\u548c\u5730\n\u306b\u7d71\u548c\u65b9\u53bb\n\u7f6a\u6d3b\u52d5,\n\u7fa4\u4f17,\u4f7f\n\u652f\u3002\ne e/6 r rarm*\naeran naterer\nroes\nancrr2ee\n3)\u901a\u8fc7\u4eba\n\u9999!\n_ e s r\nseafon\nserso perar\nter 2l pee\nam ee c\n:_blr\n19bz\nsansr narar\n\u6208\u706b\u72af\u7f6a\n\u767d\n\u4e8c,\n_ rarrca\n\u57ce \u9501\u79d1\nww_w\n": [
-        "Cina5_123_recto"
-    ],
-    "\u548c": [
-        "Cina5_123_recto"
-    ],
-    "\u308a": [
-        "Cina5_123_recto"
-    ],
-    "\u4e5f\u662f": [
-        "Cina5_123_recto"
-    ],
-    "\u5561": [
-        "Cina5_123_recto"
-    ],
-    "\u4e86": [
-        "Cina5_123_recto"
-    ],
-    "\u5904": [
-        "Cina5_123_recto"
-    ],
-    "\u6211": [
-        "Cina5_123_recto"
-    ],
-    "\u7684": [
-        "Cina5_123_recto"
-    ],
-    "\u4e0d\u662f": [
-        "Cina5_123_recto"
-    ],
-    "\u8fd9": [
-        "Cina5_123_recto"
-    ],
-    "\u65b9": [
-        "Cina5_123_recto"
-    ],
-    "\u5403": [
-        "Cina5_123_recto"
-    ],
-    "\u4e09": [
-        "Cina5_123_recto"
-    ],
-    "\u5c31\u662f": [
-        "Cina5_123_recto"
-    ],
-    "\u90a3": [
-        "Cina5_123_recto"
-    ],
-    "5": [
-        "Cina5_123_recto",
-        "F56_33_recto"
-    ],
-    "\u54c8": [
-        "Cina5_123_recto"
-    ],
-    "\u7acb": [
-        "Cina5_123_recto"
-    ],
-    "\u7ed3": [
-        "Cina5_123_recto"
-    ],
-    "\u7247": [
-        "Cina5_123_recto"
-    ],
-    "\u4e61": [
-        "Cina5_123_recto"
-    ],
-    "\u9633": [
-        "Cina5_123_recto"
-    ],
-    "\u65f6": [
-        "Cina5_123_recto"
-    ],
-    ",": [
-        "Cina5_123_recto"
-    ],
-    "\u5728": [
-        "Cina5_123_recto"
-    ],
-    "\u8981": [
-        "Cina5_123_recto"
-    ],
-    "\u8ba2": [
-        "Cina5_123_recto"
-    ],
-    "\u597d": [
-        "Cina5_123_recto"
-    ],
-    "\u5357": [
-        "Cina5_123_recto"
-    ],
-    "\u6cd5": [
-        "Cina5_123_recto"
-    ],
-    "\u695a\u695a": [
-        "Cina5_123_recto"
-    ],
-    "\u3002": [
-        "Cina5_123_recto"
-    ],
-    "\u6709": [
-        "Cina5_123_recto"
-    ],
-    "\u5230": [
-        "Cina5_123_recto"
-    ],
-    "\u7279": [
-        "Cina5_123_recto"
-    ],
-    "\u8bba": [
-        "Cina5_123_recto"
-    ],
-    "\u5207": [
-        "Cina5_123_recto"
-    ],
-    "\u5236": [
-        "Cina5_123_recto"
-    ],
-    "\u4e5f": [
-        "Cina5_123_recto"
-    ],
-    "\u4eec": [
-        "Cina5_123_recto"
-    ],
-    "\u5404\u79cd": [
-        "Cina5_123_recto"
-    ],
-    "\u7801": [
-        "Cina5_123_recto"
-    ],
-    "\u5f0f": [
-        "Cina5_123_recto"
-    ],
-    "\u53f0": [
-        "Cina5_123_recto"
-    ],
-    "\u4f73": [
-        "Cina5_123_recto"
-    ],
-    "f4": [
-        "Cina5_123_recto"
-    ],
-    "\u4f4e": [
-        "Cina5_123_recto"
-    ],
-    "\u6d3b": [
-        "Cina5_123_recto"
-    ],
-    "\u53ca": [
-        "Cina5_123_recto"
-    ],
-    "4": [
-        "Cina5_123_recto"
-    ],
-    "\u7ecf": [
-        "Cina5_123_recto"
-    ],
-    "\u4f1a": [
-        "Cina5_123_recto"
-    ],
-    "\u540c\u6642": [
-        "Cina5_123_recto"
-    ],
-    "\u610f": [
-        "Cina5_123_recto"
-    ],
-    "\u4e9b": [
-        "Cina5_123_recto"
-    ],
-    "\u4ec0\u4e48": [
-        "Cina5_123_recto"
-    ],
-    "\u95f4": [
-        "Cina5_123_recto"
-    ],
-    "\u9898": [
-        "Cina5_123_recto"
-    ],
-    "\u3092": [
-        "Cina5_123_recto"
-    ],
-    "\u4e2d": [
-        "Cina5_123_recto",
-        "T36_59_recto"
-    ],
-    "\u6597": [
-        "Cina5_123_recto"
-    ],
-    "\u4e1a": [
-        "Cina5_123_recto"
-    ],
-    "\u751f": [
-        "Cina5_123_recto",
-        "F27_70_recto"
-    ],
-    "\u5dee": [
-        "Cina5_123_recto"
-    ],
-    "\u4e00\u4e2a": [
-        "Cina5_123_recto"
-    ],
-    "\u591a\u79cd": [
-        "Cina5_123_recto"
-    ],
-    "\u7ef4": [
-        "Cina5_123_recto"
-    ],
-    "\u6210": [
-        "Cina5_123_recto"
-    ],
-    "\u9996": [
-        "Cina5_123_recto"
-    ],
-    "\u591a\u5c42": [
-        "Cina5_123_recto"
-    ],
-    "\u5927": [
-        "Cina5_123_recto"
-    ],
-    "\u80fd": [
-        "Cina5_123_recto"
-    ],
-    "\u540d": [
-        "Cina5_123_recto"
-    ],
-    "\u5efa\u6784": [
-        "Cina5_123_recto"
-    ],
-    "d": [
-        "Cina5_123_recto"
-    ],
-    "\u821e": [
-        "Cina5_123_recto"
-    ],
-    "\u7b2c": [
-        "Cina5_123_recto"
-    ],
-    "\u8ba1\u5212": [
-        "Cina5_123_recto"
-    ],
-    "\u7edf": [
-        "Cina5_123_recto"
-    ],
-    "\u524d\u7a0b": [
-        "Cina5_123_recto"
-    ],
-    "1_": [
-        "Cina5_123_recto"
-    ],
-    "\u53d1": [
-        "Cina5_123_recto"
-    ],
-    "\u6837": [
-        "Cina5_123_recto"
-    ],
-    "\u4e0d": [
-        "Cina5_123_recto"
-    ],
-    "\u8c03": [
-        "Cina5_123_recto"
-    ],
-    "\u6797": [
-        "Cina5_123_recto"
-    ],
-    "\u4f5c\u56fe": [
-        "Cina5_123_recto"
-    ],
-    "\u53d1\u5c55": [
-        "Cina5_123_recto"
-    ],
-    "\u54c1": [
-        "Cina5_123_recto"
-    ],
-    "\u6d77": [
-        "Cina5_123_recto",
-        "T36_59_recto"
-    ],
-    "\u8acb": [
-        "Cina5_123_recto"
-    ],
-    "\u51b0": [
-        "Cina5_123_recto"
-    ],
-    "\u7ea6": [
-        "Cina5_123_recto"
-    ],
-    "\u6545": [
-        "Cina5_123_recto"
-    ],
-    "\u52a8": [
-        "Cina5_123_recto"
-    ],
-    "\u5916": [
-        "Cina5_123_recto"
-    ],
-    "\u5927\u9752": [
-        "Cina5_123_recto"
-    ],
-    "\u56db": [
-        "Cina5_123_recto"
-    ],
-    "\u7d20\u6027": [
-        "Cina5_123_recto"
-    ],
-    "\u7247\u540d": [
-        "Cina5_123_recto"
-    ],
-    "\u81ea": [
-        "Cina5_123_recto"
-    ],
-    "\u4e89": [
-        "Cina5_123_recto"
-    ],
-    "\u73b0": [
-        "Cina5_123_recto"
-    ],
-    "\u9054": [
-        "Cina5_123_recto"
-    ],
-    "\u65b0": [
-        "Cina5_123_recto"
-    ],
-    "\u8001": [
-        "Cina5_123_recto"
-    ],
-    "\u672a": [
-        "Cina5_123_recto"
-    ],
-    "\u540c": [
-        "Cina5_123_recto"
-    ],
-    "\u5bb9": [
-        "Cina5_123_recto"
-    ],
-    "\u5229": [
-        "Cina5_123_recto"
-    ],
-    "\u6253": [
-        "Cina5_123_recto"
-    ],
-    "-": [
-        "Cina5_123_recto"
-    ],
-    "\u9001": [
-        "Cina5_123_recto"
-    ],
-    "\u8857": [
-        "Cina5_123_recto"
-    ],
-    "\u5fb7": [
-        "Cina5_123_recto"
-    ],
-    "\u6cd5\u5f8b": [
-        "Cina5_123_recto"
-    ],
-    "\u5934": [
-        "Cina5_123_recto"
-    ],
-    "\u52a0": [
-        "Cina5_123_recto"
-    ],
-    "\u4e24": [
-        "Cina5_123_recto"
-    ],
-    "uz": [
-        "Cina5_123_recto"
-    ],
-    "(": [
-        "Cina5_123_recto"
-    ],
-    "t42": [
-        "Cina5_123_recto"
-    ],
-    "\u5b50": [
-        "Cina5_123_recto"
-    ],
-    "\u578b": [
-        "Cina5_123_recto"
-    ],
-    "\u5b9a": [
-        "Cina5_123_recto"
-    ],
-    "\u4ee3": [
-        "Cina5_123_recto"
-    ],
-    "\u300a": [
-        "Cina5_123_recto"
-    ],
-    "\u5316": [
-        "Cina5_123_recto"
-    ],
-    "\u575a\u51b3": [
-        "Cina5_123_recto"
-    ],
-    "\u53bb": [
-        "Cina5_123_recto"
-    ],
-    "\u53cd": [
-        "Cina5_123_recto"
-    ],
-    "\u4e3a": [
-        "Cina5_123_recto"
-    ],
-    "\u4e3b": [
-        "Cina5_123_recto"
-    ],
-    "\u5371": [
-        "Cina5_123_recto"
-    ],
-    "\u8005": [
-        "Cina5_123_recto"
-    ],
-    "\u793e\u4f1a": [
-        "Cina5_123_recto"
-    ],
-    "\u8a72": [
-        "Cina5_123_recto"
-    ],
-    "\u7d00": [
-        "Cina5_123_recto"
-    ],
-    "\u3001": [
-        "Cina5_123_recto"
-    ],
-    "\u5834": [
-        "Cina5_123_recto"
-    ],
-    "\u5206\u5b50": [
-        "Cina5_123_recto"
-    ],
-    "\u5206": [
-        "Cina5_123_recto"
-    ],
-    "\u305d": [
-        "Cina5_123_recto"
-    ],
-    "\u4f9d\u6cd5": [
-        "Cina5_123_recto"
-    ],
-    "\u4e25\u60e9": [
-        "Cina5_123_recto"
-    ],
-    "\u4e25\u91cd": [
-        "Cina5_123_recto"
-    ],
-    "\u5371\u5bb3": [
-        "Cina5_123_recto"
-    ],
-    "\u6cbb\u5b89": [
-        "Cina5_123_recto"
-    ],
-    "\u72af\u7f6a": [
-        "Cina5_123_recto"
-    ],
-    "\u6740\u4eba": [
-        "Cina5_123_recto"
-    ],
-    "\u7f6a\u72af": [
-        "Cina5_123_recto"
-    ],
-    "\u9648\u7acb\u6ce2": [
-        "Cina5_123_recto"
-    ],
-    "\u62a2\u52ab": [
-        "Cina5_123_recto"
-    ],
-    "\u9648\u5fd7\u660e": [
-        "Cina5_123_recto"
-    ],
-    "\u88ab\u5224": [
-        "Cina5_123_recto"
-    ],
-    "\u6b7b\u5211": [
-        "Cina5_123_recto"
-    ],
-    ":": [
-        "Cina5_123_recto"
-    ],
-    "\u7ee7\u7eed": [
-        "Cina5_123_recto"
-    ],
-    "\u6574": [
-        "Cina5_123_recto"
-    ],
-    "\u6280": [
-        "Cina5_123_recto",
-        "T36_20_recto"
-    ],
-    "\u91cc": [
-        "Cina5_123_recto"
-    ],
-    "\u8a2d": [
-        "Cina5_123_recto"
-    ],
-    "\u8fde": [
-        "Cina5_123_recto"
-    ],
-    "\u6b7b": [
-        "Cina5_123_recto"
-    ],
-    "\u4f8d": [
-        "Cina5_123_recto"
-    ],
-    "\u6d41": [
-        "Cina5_123_recto"
-    ],
-    "\u5f88": [
-        "Cina5_123_recto"
-    ],
-    "\u56e2": [
-        "Cina5_123_recto"
-    ],
-    "\u6700": [
-        "Cina5_123_recto"
-    ],
-    "\u50cf": [
-        "Cina5_123_recto"
-    ],
-    "\u5e36": [
-        "Cina5_123_recto"
-    ],
-    "\u5730": [
-        "Cina5_123_recto"
-    ],
-    "\u306b": [
-        "Cina5_123_recto"
-    ],
-    "\u7d71": [
-        "Cina5_123_recto"
-    ],
-    "\u7f6a": [
-        "Cina5_123_recto"
-    ],
-    "\u6d3b\u52d5": [
-        "Cina5_123_recto"
-    ],
-    "\u7fa4\u4f17": [
-        "Cina5_123_recto"
-    ],
-    "\u4f7f": [
-        "Cina5_123_recto"
-    ],
-    "\u652f": [
-        "Cina5_123_recto"
-    ],
-    "e": [
-        "Cina5_123_recto",
-        "T6_169_recto"
-    ],
-    "e/6": [
-        "Cina5_123_recto"
-    ],
-    "r": [
-        "Cina5_123_recto"
-    ],
-    "rarm*": [
-        "Cina5_123_recto"
-    ],
-    "aeran": [
-        "Cina5_123_recto"
-    ],
-    "naterer": [
-        "Cina5_123_recto"
-    ],
-    "roes": [
-        "Cina5_123_recto"
-    ],
-    "ancrr2ee": [
-        "Cina5_123_recto"
-    ],
-    "3": [
-        "Cina5_123_recto"
-    ],
-    ")": [
-        "Cina5_123_recto"
-    ],
-    "\u901a\u8fc7": [
-        "Cina5_123_recto"
-    ],
-    "\u4eba": [
-        "Cina5_123_recto"
-    ],
-    "\u9999": [
-        "Cina5_123_recto"
-    ],
-    "!": [
-        "Cina5_123_recto"
-    ],
-    "_": [
-        "Cina5_123_recto"
-    ],
-    "s": [
-        "Cina5_123_recto"
-    ],
-    "seafon": [
-        "Cina5_123_recto"
-    ],
-    "serso": [
-        "Cina5_123_recto"
-    ],
-    "perar": [
-        "Cina5_123_recto"
-    ],
-    "ter": [
-        "Cina5_123_recto"
-    ],
-    "2l": [
-        "Cina5_123_recto"
-    ],
-    "pee": [
-        "Cina5_123_recto"
-    ],
-    "am": [
-        "Cina5_123_recto"
-    ],
-    "ee": [
-        "Cina5_123_recto"
-    ],
-    "c": [
-        "Cina5_123_recto",
-        "T6_169_recto"
-    ],
-    ":_blr": [
-        "Cina5_123_recto"
-    ],
-    "19bz": [
-        "Cina5_123_recto"
-    ],
-    "sansr": [
-        "Cina5_123_recto"
-    ],
-    "narar": [
-        "Cina5_123_recto"
-    ],
-    "\u6208": [
-        "Cina5_123_recto"
-    ],
-    "\u706b": [
-        "Cina5_123_recto"
-    ],
-    "\u767d": [
-        "Cina5_123_recto"
-    ],
-    "\u4e8c": [
-        "Cina5_123_recto"
-    ],
-    "rarrca": [
-        "Cina5_123_recto"
-    ],
-    "\u57ce": [
-        "Cina5_123_recto"
-    ],
-    "\u9501": [
-        "Cina5_123_recto"
-    ],
-    "\u79d1": [
-        "Cina5_123_recto"
-    ],
-    "ww_w": [
-        "Cina5_123_recto"
-    ],
-    "newsprint": [
-        "T6_169_recto"
-    ],
-    "\u05d9\u05d9\u05d8\u05d9\u05e1\u05d5\nswaglam\nyou deserve\nthe best\nthe times of india shoirectely\nhotels':\ntours\nmission road manali\nby super deluxe coaches taxis\nsight seeing\nrohtang\nmanali to\ndelhi\nchandigarh\noutdoor roto e\ndharamshala\ndalhousie\njammu leh privale verrole om\nmanikaran shimla\nend lart se'nc news aper\nnaggar\nst seinc newsaper\nrush directely\n\u0906\u092a \u0924\u0924\u0935\u093e\u0924\u093e \u0939\u0948, \u092f\u093e\nhimachal joues\ndirecton\ntogrism de6 v ba:jk estate sh\ntourist infortdation c\nmarali\n": [
-        "T6_169_recto"
-    ],
-    "\u05d9\u05d9\u05d8\u05d9\u05e1\u05d5": [
-        "T6_169_recto"
-    ],
-    "swaglam": [
-        "T6_169_recto"
-    ],
-    "you": [
-        "T6_169_recto"
-    ],
-    "deserve": [
-        "T6_169_recto"
-    ],
-    "the": [
-        "T6_169_recto"
-    ],
-    "best": [
-        "T6_169_recto"
-    ],
-    "times": [
-        "T6_169_recto"
-    ],
-    "of": [
-        "T6_169_recto",
-        "T48_106_recto",
-        "T11_191_recto"
-    ],
-    "india": [
-        "T6_169_recto"
-    ],
-    "shoirectely": [
-        "T6_169_recto"
-    ],
-    "hotels':": [
-        "T6_169_recto"
-    ],
-    "tours": [
-        "T6_169_recto"
-    ],
-    "mission": [
-        "T6_169_recto"
-    ],
-    "road": [
-        "T6_169_recto",
-        "F27_85_recto"
-    ],
-    "manali": [
-        "T6_169_recto"
-    ],
-    "by": [
-        "T6_169_recto"
-    ],
-    "super": [
-        "T6_169_recto"
-    ],
-    "deluxe": [
-        "T6_169_recto"
-    ],
-    "coaches": [
-        "T6_169_recto"
-    ],
-    "taxis": [
-        "T6_169_recto"
-    ],
-    "sight": [
-        "T6_169_recto"
-    ],
-    "seeing": [
-        "T6_169_recto"
-    ],
-    "rohtang": [
-        "T6_169_recto"
-    ],
-    "to": [
-        "T6_169_recto"
-    ],
-    "delhi": [
-        "T6_169_recto"
-    ],
-    "chandigarh": [
-        "T6_169_recto"
-    ],
-    "outdoor": [
-        "T6_169_recto"
-    ],
-    "roto": [
-        "T6_169_recto"
-    ],
-    "dharamshala": [
-        "T6_169_recto"
-    ],
-    "dalhousie": [
-        "T6_169_recto"
-    ],
-    "jammu": [
-        "T6_169_recto"
-    ],
-    "leh": [
-        "T6_169_recto"
-    ],
-    "privale": [
-        "T6_169_recto"
-    ],
-    "verrole": [
-        "T6_169_recto"
-    ],
-    "om": [
-        "T6_169_recto"
-    ],
-    "manikaran": [
-        "T6_169_recto"
-    ],
-    "shimla": [
-        "T6_169_recto"
-    ],
-    "end": [
-        "T6_169_recto"
-    ],
-    "lart": [
-        "T6_169_recto"
-    ],
-    "se'nc": [
-        "T6_169_recto"
-    ],
-    "news": [
-        "T6_169_recto"
-    ],
-    "aper": [
-        "T6_169_recto"
-    ],
-    "naggar": [
-        "T6_169_recto"
-    ],
-    "st": [
-        "T6_169_recto"
-    ],
-    "seinc": [
-        "T6_169_recto"
-    ],
-    "newsaper": [
-        "T6_169_recto"
-    ],
-    "rush": [
-        "T6_169_recto"
-    ],
-    "directely": [
-        "T6_169_recto"
-    ],
-    "\u0906\u092a": [
-        "T6_169_recto"
-    ],
-    "\u0924\u0924\u0935\u093e\u0924\u093e": [
-        "T6_169_recto"
-    ],
-    "\u0939\u0948,": [
-        "T6_169_recto"
-    ],
-    "\u092f\u093e": [
-        "T6_169_recto"
-    ],
-    "himachal": [
-        "T6_169_recto"
-    ],
-    "joues": [
-        "T6_169_recto"
-    ],
-    "directon": [
-        "T6_169_recto"
-    ],
-    "togrism": [
-        "T6_169_recto"
-    ],
-    "de6": [
-        "T6_169_recto"
-    ],
-    "v": [
-        "T6_169_recto"
-    ],
-    "ba:jk": [
-        "T6_169_recto"
-    ],
-    "estate": [
-        "T6_169_recto"
-    ],
-    "sh": [
-        "T6_169_recto"
-    ],
-    "tourist": [
-        "T6_169_recto"
-    ],
-    "infortdation": [
-        "T6_169_recto"
-    ],
-    "marali": [
-        "T6_169_recto"
-    ],
-    "dog": [
-        "T36_59_recto"
-    ],
-    "tire": [
-        "T36_59_recto",
-        "Cina8_364_recto",
-        "T14_77_recto",
-        "F20_334_recto"
-    ],
-    "window": [
-        "T36_59_recto",
-        "T42_205_recto"
-    ],
-    "bicycl": [
-        "T36_59_recto",
-        "Cina8_364_recto",
-        "T14_77_recto"
-    ],
-    "\u5f8b\u6cbb\n\u6b4c\u6279\u6d77\u8000\n** chua soon hup &\n\u987a\n\u96dc\u5510\u6b0a\u4e2d\n\u8d27\u6d0b\u982d\u897f\n\u76ca\u5ee3\n\u4e7e\n\u767c\u5404\nkwong yik\nprai\nmalaysia\nclose up\ntiger\n7ea\nklim\norion\npra\nmalaysia\n|\u5c0a\u8a93\u7cd6\u8896\n|\u7c73\u7f6e\u80b2\u8f6e\n": [
-        "T36_59_recto"
-    ],
-    "\u5f8b": [
-        "T36_59_recto"
-    ],
-    "\u6cbb": [
-        "T36_59_recto"
-    ],
-    "\u6b4c": [
-        "T36_59_recto"
-    ],
-    "\u6279": [
-        "T36_59_recto"
-    ],
-    "\u8000": [
-        "T36_59_recto"
-    ],
-    "**": [
-        "T36_59_recto"
-    ],
-    "chua": [
-        "T36_59_recto"
-    ],
-    "soon": [
-        "T36_59_recto"
-    ],
-    "hup": [
-        "T36_59_recto"
-    ],
-    "&": [
-        "T36_59_recto"
-    ],
-    "\u987a": [
-        "T36_59_recto"
-    ],
-    "\u96dc": [
-        "T36_59_recto"
-    ],
-    "\u5510": [
-        "T36_59_recto"
-    ],
-    "\u6b0a": [
-        "T36_59_recto"
-    ],
-    "\u8d27": [
-        "T36_59_recto"
-    ],
-    "\u6d0b": [
-        "T36_59_recto"
-    ],
-    "\u982d": [
-        "T36_59_recto"
-    ],
-    "\u897f": [
-        "T36_59_recto"
-    ],
-    "\u76ca": [
-        "T36_59_recto"
-    ],
-    "\u5ee3": [
-        "T36_59_recto"
-    ],
-    "\u4e7e": [
-        "T36_59_recto"
-    ],
-    "\u767c": [
-        "T36_59_recto"
-    ],
-    "\u5404": [
-        "T36_59_recto"
-    ],
-    "kwong": [
-        "T36_59_recto"
-    ],
-    "yik": [
-        "T36_59_recto"
-    ],
-    "prai": [
-        "T36_59_recto"
-    ],
-    "malaysia": [
-        "T36_59_recto"
-    ],
-    "close": [
-        "T36_59_recto"
-    ],
-    "up": [
-        "T36_59_recto"
-    ],
-    "tiger": [
-        "T36_59_recto"
-    ],
-    "7ea": [
-        "T36_59_recto"
-    ],
-    "klim": [
-        "T36_59_recto"
-    ],
-    "orion": [
-        "T36_59_recto"
-    ],
-    "pra": [
-        "T36_59_recto"
-    ],
-    "|": [
-        "T36_59_recto"
-    ],
-    "\u5c0a": [
-        "T36_59_recto"
-    ],
-    "\u8a93": [
-        "T36_59_recto"
-    ],
-    "\u7cd6": [
-        "T36_59_recto"
-    ],
-    "\u8896": [
-        "T36_59_recto"
-    ],
-    "\u7c73": [
-        "T36_59_recto"
-    ],
-    "\u7f6e": [
-        "T36_59_recto"
-    ],
-    "\u80b2": [
-        "T36_59_recto"
-    ],
-    "\u8f6e": [
-        "T36_59_recto"
-    ],
-    "furnitur": [
-        "F26_57_recto",
-        "Cina6_9_recto",
-        "T20_109_recto",
-        "T34_40_recto",
-        "T11_13_recto"
-    ],
-    "bed": [
-        "F26_57_recto"
-    ],
-    "sigigtst\n": [
-        "F26_57_recto"
-    ],
-    "sigigtst": [
-        "F26_57_recto"
-    ],
-    "tree": [
-        "F27_85_recto",
-        "F27_110_recto",
-        "T10_152_recto",
-        "T55_13_recto",
-        "T63_69_recto"
-    ],
-    "architectur": [
-        "F27_85_recto",
-        "T14_77_recto",
-        "T34_40_recto"
-    ],
-    "candy\nbox\n\u9ad8\u7d1a\n300\nb_v_c\n": [
-        "F27_85_recto"
-    ],
-    "candy": [
-        "F27_85_recto"
-    ],
-    "box": [
-        "F27_85_recto"
-    ],
-    "\u9ad8\u7d1a": [
-        "F27_85_recto"
-    ],
-    "300": [
-        "F27_85_recto"
-    ],
-    "b_v_c": [
-        "F27_85_recto"
-    ],
-    "water": [
-        "F27_110_recto",
-        "T55_13_recto",
-        "T12_43_recto"
-    ],
-    "picket": [
-        "F27_110_recto"
-    ],
-    "fenc": [
-        "F27_110_recto"
-    ],
-    "bridg": [
-        "F27_110_recto"
-    ],
-    "flower": [
-        "F27_110_recto"
-    ],
-    "lake": [
-        "F27_110_recto"
-    ],
-    "lure": [
-        "F27_110_recto"
-    ],
-    "\u4f86\n\u585a\nwes\nfodg\n": [
-        "F27_110_recto"
-    ],
-    "\u4f86": [
-        "F27_110_recto"
-    ],
-    "\u585a": [
-        "F27_110_recto"
-    ],
-    "wes": [
-        "F27_110_recto"
-    ],
-    "fodg": [
-        "F27_110_recto"
-    ],
-    "human": [
-        "T42_205_recto",
-        "T63_69_recto",
-        "F20_444_recto"
-    ],
-    "street": [
-        "T42_205_recto",
-        "T11_191_recto",
-        "T14_77_recto",
-        "T36_20_recto"
-    ],
-    "carriag": [
-        "T48_106_recto"
-    ],
-    "buggi": [
-        "T48_106_recto"
-    ],
-    "hors": [
-        "T48_106_recto"
-    ],
-    "and": [
-        "T48_106_recto"
-    ],
-    "wagon": [
-        "T48_106_recto"
+        "F25_125_recto",
+        "T41_48_recto",
+        "Cina5_350_recto",
+        "T62_10_recto",
+        "Cina5_254_recto",
+        "T60_162_recto",
+        "F19_157_recto",
+        "T4_9_recto",
+        "T41_135_recto",
+        "T41_107_recto",
+        "T31_6_recto",
+        "T63_45_recto",
+        "T5_4_recto",
+        "T12_144_recto",
+        "F25_121_recto",
+        "F19_27_recto",
+        "Cina5_331_recto",
+        "T49_195_recto",
+        "T35_220_recto",
+        "T27_3_recto",
+        "T36_34_recto",
+        "F26_117_recto",
+        "T31_30_recto",
+        "T10_104_recto",
+        "T49_242_recto",
+        "F19_189_recto",
+        "F20_212_recto",
+        "T11_180_recto",
+        "Cina4_34_recto",
+        "T27_16_recto",
+        "T4_92_recto",
+        "F19_62_recto",
+        "T5_56_recto"
     ],
     "transport": [
-        "T48_106_recto",
-        "T11_191_recto"
+        "F25_125_recto"
     ],
-    "mode": [
-        "T48_106_recto",
-        "T11_191_recto"
+    "style": [
+        "F25_125_recto",
+        "T62_10_recto",
+        "F19_157_recto",
+        "T35_220_recto",
+        "T36_34_recto",
+        "F19_189_recto",
+        "F19_62_recto"
     ],
-    "cart": [
-        "T48_106_recto"
-    ],
-    "sky": [
-        "T10_152_recto",
-        "T12_43_recto"
-    ],
-    "tower": [
-        "T10_152_recto"
-    ],
-    "landscap": [
-        "T10_152_recto",
-        "F20_182_recto"
-    ],
-    "poa\n": [
-        "T10_152_recto"
-    ],
-    "poa": [
-        "T10_152_recto"
-    ],
-    "eyewear": [
-        "T60_169_recto"
-    ],
-    "glass": [
-        "T60_169_recto"
-    ],
-    "bu": [
-        "T11_191_recto"
-    ],
-    "motorcycl": [
-        "T11_191_recto"
-    ],
-    "wheel": [
-        "T11_191_recto"
-    ],
-    "'he\u05db\u05e1\u05d1\n": [
-        "T11_191_recto"
-    ],
-    "'he\u05db\u05e1\u05d1": [
-        "T11_191_recto"
-    ],
-    "event": [
-        "F20_102_recto",
-        "T42_215_recto"
-    ],
-    "tourism": [
-        "F20_102_recto"
-    ],
-    "crowd": [
-        "F20_102_recto"
-    ],
-    "fun": [
-        "F20_102_recto",
-        "F20_444_recto",
-        "F20_334_recto"
-    ],
-    "peopl": [
-        "F20_102_recto",
-        "F20_444_recto",
-        "F20_334_recto"
-    ],
-    "10\n": [
-        "F20_102_recto"
-    ],
-    "10": [
-        "F20_102_recto"
-    ],
-    "school": [
-        "T42_215_recto",
-        "T14_77_recto"
-    ],
-    "classroom": [
-        "T42_215_recto"
-    ],
-    "class": [
-        "T42_215_recto"
-    ],
-    "student": [
-        "T42_215_recto"
-    ],
-    "classic": [
-        "Cina8_360_recto"
-    ],
-    "retro": [
-        "Cina8_360_recto"
-    ],
-    "famili": [
-        "Cina8_360_recto"
-    ],
-    "car": [
-        "Cina8_360_recto"
+    "photographi": [
+        "F25_125_recto",
+        "Cina5_293_recto",
+        "T41_48_recto",
+        "Cina5_350_recto",
+        "T62_10_recto",
+        "Cina5_254_recto",
+        "T60_162_recto",
+        "F19_157_recto",
+        "T4_9_recto",
+        "T41_135_recto",
+        "T41_107_recto",
+        "T31_6_recto",
+        "T63_45_recto",
+        "T5_4_recto",
+        "T12_144_recto",
+        "F25_121_recto",
+        "F19_27_recto",
+        "Cina5_331_recto",
+        "T49_195_recto",
+        "T35_220_recto",
+        "T27_3_recto",
+        "T36_34_recto",
+        "F26_117_recto",
+        "T31_30_recto",
+        "F56_17_recto",
+        "T10_104_recto",
+        "T49_242_recto",
+        "F19_189_recto",
+        "F20_212_recto",
+        "T11_180_recto",
+        "T10_96_recto",
+        "Cina4_34_recto",
+        "T27_16_recto",
+        "T4_92_recto",
+        "F19_62_recto",
+        "T5_56_recto"
     ],
     "build": [
-        "Cina8_360_recto",
-        "T14_77_recto",
-        "T34_40_recto",
-        "T10_173_recto"
+        "F25_125_recto",
+        "T63_45_recto",
+        "T12_144_recto",
+        "F25_121_recto",
+        "F19_27_recto",
+        "Cina4_34_recto"
     ],
-    "hat": [
-        "Cina8_360_recto",
-        "F22_49_recto",
-        "T20_109_recto",
-        "T36_20_recto"
+    "architectur": [
+        "F25_125_recto",
+        "Cina5_350_recto",
+        "T12_144_recto",
+        "F25_121_recto",
+        "T10_96_recto"
     ],
-    "coat": [
-        "Cina8_360_recto",
-        "Cina6_9_recto"
+    "blackandwhit": [
+        "F25_125_recto",
+        "T41_48_recto",
+        "Cina5_350_recto",
+        "T62_10_recto",
+        "Cina5_254_recto",
+        "T60_162_recto",
+        "F19_157_recto",
+        "T4_9_recto",
+        "T41_135_recto",
+        "T41_107_recto",
+        "T31_6_recto",
+        "T63_45_recto",
+        "T5_4_recto",
+        "T12_144_recto",
+        "F25_121_recto",
+        "F19_27_recto",
+        "Cina5_331_recto",
+        "T35_220_recto",
+        "T27_3_recto",
+        "T36_34_recto",
+        "F26_117_recto",
+        "T31_30_recto",
+        "F56_17_recto",
+        "T10_104_recto",
+        "F19_189_recto",
+        "T11_180_recto",
+        "T10_96_recto",
+        "Cina4_34_recto",
+        "T27_16_recto",
+        "T4_92_recto",
+        "F19_62_recto",
+        "T5_56_recto"
     ],
-    "31-23831\nfailiq\n": [
-        "Cina8_360_recto"
+    "truck": [
+        "F25_125_recto"
     ],
-    "31-23831": [
-        "Cina8_360_recto"
+    "\u5927\u585a\u5546\u4f1a\n11\nekibgestone\n|\u5916\n": [
+        "F25_125_recto"
     ],
-    "failiq": [
-        "Cina8_360_recto"
+    "\u5927": [
+        "F25_125_recto"
     ],
-    "laugh": [
-        "Cina8_107_recto"
+    "\u585a": [
+        "F25_125_recto"
     ],
-    "facial": [
-        "Cina8_107_recto"
-    ],
-    "express": [
-        "Cina8_107_recto"
-    ],
-    "smile": [
-        "Cina8_107_recto"
-    ],
-    "bowti": [
-        "Cina8_107_recto"
-    ],
-    "statu": [
-        "F27_70_recto"
-    ],
-    "memori": [
-        "F27_70_recto"
-    ],
-    "landmark": [
-        "F27_70_recto"
-    ],
-    "monument": [
-        "F27_70_recto"
-    ],
-    "\u751f\n": [
-        "F27_70_recto"
-    ],
-    "organ": [
-        "T55_13_recto"
-    ],
-    "rock": [
-        "T55_13_recto",
-        "F20_182_recto"
-    ],
-    "dress": [
-        "T63_69_recto"
-    ],
-    "footwear": [
-        "T63_69_recto"
-    ],
-    "\u8fb9\u9632\u6267\u52e4\nborderouty\n": [
-        "F22_49_recto"
-    ],
-    "\u8fb9\u9632": [
-        "F22_49_recto"
-    ],
-    "\u6267\u52e4": [
-        "F22_49_recto"
-    ],
-    "borderouty": [
-        "F22_49_recto"
-    ],
-    "vintag": [
-        "F20_444_recto"
-    ],
-    "monk": [
-        "F20_444_recto"
-    ],
-    "templ": [
-        "Cina6_9_recto"
-    ],
-    "still": [
-        "Cina6_9_recto",
-        "F20_182_recto",
-        "T11_13_recto",
-        "F56_33_recto",
-        "T10_125_recto"
-    ],
-    "life": [
-        "Cina6_9_recto",
-        "F20_182_recto",
-        "T11_13_recto",
-        "F56_33_recto",
-        "T10_125_recto"
-    ],
-    "stone": [
-        "F20_182_recto",
-        "F56_21_recto"
-    ],
-    "wall": [
-        "F20_182_recto",
-        "T10_125_recto"
-    ],
-    "boca": [
-        "T14_77_recto"
-    ],
-    "junior": [
-        "T14_77_recto"
-    ],
-    "east": [
-        "T14_77_recto"
-    ],
-    "high": [
-        "T14_77_recto"
-    ],
-    "victoria": [
-        "T14_77_recto"
-    ],
-    "lan\n17\nlao international tour\ntur\nsirikane lad\nbijoux-artisanat\nlao\n": [
-        "T14_77_recto"
-    ],
-    "lan": [
-        "T14_77_recto"
-    ],
-    "17": [
-        "T14_77_recto"
-    ],
-    "lao": [
-        "T14_77_recto"
-    ],
-    "international": [
-        "T14_77_recto"
-    ],
-    "tour": [
-        "T14_77_recto"
-    ],
-    "tur": [
-        "T14_77_recto"
-    ],
-    "sirikane": [
-        "T14_77_recto"
-    ],
-    "lad": [
-        "T14_77_recto"
-    ],
-    "bijoux-artisanat": [
-        "T14_77_recto"
-    ],
-    "child": [
-        "F20_334_recto"
-    ],
-    "happi": [
-        "F20_334_recto"
-    ],
-    "sit": [
-        "F20_334_recto"
-    ],
-    "share": [
-        "F20_334_recto"
-    ],
-    "food": [
-        "F20_334_recto",
-        "T20_109_recto"
-    ],
-    "tablewar": [
-        "F20_334_recto"
-    ],
-    "sculptur": [
-        "F56_21_recto"
-    ],
-    "head": [
-        "F56_21_recto"
-    ],
-    "visual": [
-        "F56_21_recto",
-        "T11_13_recto"
-    ],
-    "relief": [
-        "F56_21_recto"
-    ],
-    "carv": [
-        "F56_21_recto"
-    ],
-    "artifact": [
-        "F56_21_recto"
-    ],
-    "convers": [
-        "T20_109_recto"
-    ],
-    "meal": [
-        "T20_109_recto"
-    ],
-    "stool": [
-        "T20_109_recto"
-    ],
-    "11\n": [
-        "T34_40_recto"
+    "\u5546\u4f1a": [
+        "F25_125_recto"
     ],
     "11": [
-        "T34_40_recto"
+        "F25_125_recto"
     ],
-    "collect": [
-        "T11_13_recto"
+    "ekibgestone": [
+        "F25_125_recto"
     ],
-    "707\n\uc800 \ud558\n": [
-        "T11_13_recto"
+    "|": [
+        "F25_125_recto"
     ],
-    "707": [
-        "T11_13_recto"
+    "\u5916": [
+        "F25_125_recto"
     ],
-    "\uc800": [
-        "T11_13_recto"
+    "schooner": [
+        "Cina5_293_recto"
     ],
-    "\ud558": [
-        "T11_13_recto"
+    "watercraft": [
+        "Cina5_293_recto"
     ],
-    "sun": [
-        "T36_20_recto"
+    "sailboat": [
+        "Cina5_293_recto"
     ],
-    "\u6280\u5bb6\na881\nkg\nincapen\n": [
-        "T36_20_recto"
+    "boat": [
+        "Cina5_293_recto"
     ],
-    "\u5bb6": [
-        "T36_20_recto"
+    "mast": [
+        "Cina5_293_recto"
     ],
-    "a881": [
-        "T36_20_recto"
+    "tall": [
+        "Cina5_293_recto"
     ],
-    "kg": [
-        "T36_20_recto"
+    "sail": [
+        "Cina5_293_recto"
     ],
-    "incapen": [
-        "T36_20_recto"
+    "stock": [
+        "Cina5_293_recto",
+        "T41_48_recto",
+        "Cina5_350_recto",
+        "T62_10_recto",
+        "Cina5_254_recto",
+        "T60_162_recto",
+        "F19_157_recto",
+        "T4_9_recto",
+        "T41_135_recto",
+        "T41_107_recto",
+        "T63_45_recto",
+        "T5_4_recto",
+        "T12_144_recto",
+        "F25_121_recto",
+        "F19_27_recto",
+        "Cina5_331_recto",
+        "T35_220_recto",
+        "T27_3_recto",
+        "F26_117_recto",
+        "T31_30_recto",
+        "F56_17_recto",
+        "T10_104_recto",
+        "F19_189_recto",
+        "T11_180_recto",
+        "T10_96_recto",
+        "Cina4_34_recto",
+        "T4_92_recto",
+        "F19_62_recto",
+        "T5_56_recto"
     ],
-    "draw": [
-        "F56_33_recto"
+    "vehicl": [
+        "Cina5_293_recto",
+        "T41_107_recto",
+        "T12_144_recto"
     ],
-    "printmak": [
-        "F56_33_recto"
+    "ship": [
+        "Cina5_293_recto"
     ],
     "illustr": [
-        "F56_33_recto"
+        "F21_140_recto",
+        "T60_162_recto",
+        "Cina5_331_recto",
+        "T31_30_recto"
     ],
-    "artwork": [
-        "F56_33_recto"
+    "photo": [
+        "F21_140_recto",
+        "T10_104_recto"
+    ],
+    "caption": [
+        "F21_140_recto",
+        "T10_104_recto"
+    ],
+    "gangadhar": [
+        "F21_140_recto"
+    ],
+    "meher": [
+        "F21_140_recto"
+    ],
+    "univers": [
+        "F21_140_recto"
+    ],
+    "person": [
+        "F21_140_recto",
+        "T34_206_recto",
+        "T41_48_recto",
+        "Cina5_350_recto",
+        "T62_10_recto",
+        "Cina5_254_recto",
+        "F19_157_recto",
+        "T4_9_recto",
+        "T41_135_recto",
+        "T41_107_recto",
+        "T31_6_recto",
+        "T63_45_recto",
+        "F25_121_recto",
+        "F19_27_recto",
+        "T11_87_recto",
+        "Cina5_331_recto",
+        "T49_195_recto",
+        "T35_220_recto",
+        "T27_3_recto",
+        "T11_97_recto",
+        "F26_117_recto",
+        "T31_30_recto",
+        "T10_104_recto",
+        "T49_242_recto",
+        "F19_189_recto",
+        "F20_212_recto",
+        "T11_180_recto",
+        "T10_96_recto",
+        "Cina4_34_recto",
+        "T27_16_recto",
+        "T4_92_recto",
+        "F19_62_recto",
+        "T5_56_recto"
+    ],
+    "outerwear": [
+        "F21_140_recto",
+        "T60_162_recto",
+        "T41_135_recto",
+        "Cina5_331_recto"
+    ],
+    "pant": [
+        "F21_140_recto",
+        "F19_27_recto",
+        "T49_195_recto",
+        "T35_220_recto",
+        "F19_62_recto"
+    ],
+    "flag": [
+        "F21_140_recto"
+    ],
+    "offici": [
+        "T34_206_recto"
+    ],
+    "chin": [
+        "T34_206_recto"
+    ],
+    "militari": [
+        "T34_206_recto"
+    ],
+    "uniform": [
+        "T34_206_recto"
+    ],
+    "offic": [
+        "T34_206_recto"
+    ],
+    "forehead": [
+        "T34_206_recto",
+        "T60_162_recto"
+    ],
+    "rank": [
+        "T34_206_recto"
+    ],
+    "moustach": [
+        "T34_206_recto"
+    ],
+    "tie": [
+        "T34_206_recto"
+    ],
+    "cloth": [
+        "T34_206_recto",
+        "Cina5_350_recto",
+        "T62_10_recto",
+        "Cina5_254_recto",
+        "T60_162_recto",
+        "F19_157_recto",
+        "T41_135_recto",
+        "T41_107_recto",
+        "T31_6_recto",
+        "T63_45_recto",
+        "F25_121_recto",
+        "T11_87_recto",
+        "Cina5_331_recto",
+        "T35_220_recto",
+        "T27_3_recto",
+        "F26_117_recto",
+        "T31_30_recto",
+        "T10_104_recto",
+        "F19_189_recto",
+        "Cina4_34_recto",
+        "T27_16_recto",
+        "T4_92_recto",
+        "T5_56_recto"
+    ],
+    "tree": [
+        "T41_48_recto",
+        "Cina5_254_recto",
+        "T63_45_recto",
+        "T5_4_recto",
+        "T49_195_recto"
+    ],
+    "adapt": [
+        "T41_48_recto",
+        "T60_162_recto",
+        "T4_9_recto",
+        "T31_6_recto",
+        "T5_4_recto",
+        "T49_195_recto",
+        "T27_3_recto",
+        "F20_212_recto"
+    ],
+    "ruin": [
+        "T41_48_recto"
+    ],
+    "photograph": [
+        "T41_48_recto",
+        "Cina5_350_recto",
+        "T62_10_recto",
+        "Cina5_254_recto",
+        "T60_162_recto",
+        "F19_157_recto",
+        "T4_9_recto",
+        "T41_135_recto",
+        "T41_107_recto",
+        "T31_6_recto",
+        "T63_45_recto",
+        "T5_4_recto",
+        "T12_144_recto",
+        "F25_121_recto",
+        "F19_27_recto",
+        "Cina5_331_recto",
+        "T49_195_recto",
+        "T35_220_recto",
+        "T27_3_recto",
+        "F26_117_recto",
+        "T31_30_recto",
+        "T10_104_recto",
+        "T49_242_recto",
+        "F19_189_recto",
+        "F20_212_recto",
+        "T11_180_recto",
+        "Cina4_34_recto",
+        "T27_16_recto",
+        "T4_92_recto",
+        "F19_62_recto",
+        "T5_56_recto"
+    ],
+    "stand": [
+        "Cina5_350_recto",
+        "F19_157_recto",
+        "F19_27_recto",
+        "T49_195_recto",
+        "T35_220_recto",
+        "T27_3_recto",
+        "T11_180_recto",
+        "T27_16_recto"
+    ],
+    "crowd": [
+        "Cina5_350_recto",
+        "Cina5_254_recto"
+    ],
+    "art": [
+        "T62_10_recto",
+        "T11_87_recto",
+        "Cina5_331_recto",
+        "T31_30_recto",
+        "F56_17_recto",
+        "Cina4_34_recto",
+        "T4_92_recto",
+        "T5_56_recto"
+    ],
+    "room": [
+        "T62_10_recto",
+        "T4_9_recto",
+        "T41_135_recto",
+        "T31_6_recto",
+        "T11_87_recto",
+        "T31_30_recto",
+        "F19_62_recto",
+        "T5_56_recto"
+    ],
+    "peopl": [
+        "Cina5_254_recto",
+        "F26_117_recto",
+        "F20_212_recto"
+    ],
+    "anim": [
+        "Cina5_254_recto"
+    ],
+    "portrait": [
+        "T60_162_recto",
+        "T41_135_recto",
+        "T49_242_recto"
+    ],
+    "vintag": [
+        "T60_162_recto"
+    ],
+    "street": [
+        "F19_157_recto",
+        "F25_121_recto",
+        "T35_220_recto",
+        "T10_96_recto"
+    ],
+    "helmet": [
+        "F19_157_recto"
+    ],
+    "hat": [
+        "F19_157_recto",
+        "T27_3_recto",
+        "F26_117_recto"
+    ],
+    "\u0966\n": [
+        "F19_157_recto"
+    ],
+    "\u0966": [
+        "F19_157_recto"
+    ],
+    "frame": [
+        "T4_9_recto",
+        "T31_6_recto",
+        "T5_4_recto",
+        "T31_30_recto",
+        "T4_92_recto",
+        "T5_56_recto"
+    ],
+    "paper": [
+        "T4_9_recto",
+        "T31_6_recto"
+    ],
+    "pictur": [
+        "T4_9_recto",
+        "T31_6_recto",
+        "T5_4_recto",
+        "T31_30_recto",
+        "T4_92_recto",
+        "T5_56_recto"
+    ],
+    "dress": [
+        "T4_9_recto"
+    ],
+    "smile": [
+        "T41_135_recto",
+        "T49_242_recto"
+    ],
+    "cake": [
+        "T41_135_recto"
+    ],
+    "tablewar": [
+        "T41_135_recto",
+        "T10_104_recto",
+        "F19_189_recto"
+    ],
+    "furnitur": [
+        "T41_135_recto",
+        "T63_45_recto",
+        "T11_87_recto",
+        "Cina5_331_recto",
+        "F19_189_recto"
+    ],
+    "sky": [
+        "T41_107_recto"
+    ],
+    "bicycl": [
+        "T41_107_recto"
+    ],
+    "black": [
+        "T41_107_recto",
+        "F25_121_recto",
+        "F19_27_recto",
+        "T36_34_recto",
+        "T11_180_recto",
+        "T27_16_recto",
+        "T5_56_recto"
+    ],
+    "white": [
+        "T41_107_recto",
+        "F19_27_recto",
+        "T11_180_recto",
+        "T27_16_recto"
+    ],
+    "tire": [
+        "T41_107_recto"
+    ],
+    "tabl": [
+        "T63_45_recto",
+        "T10_104_recto",
+        "F19_189_recto"
+    ],
+    "chair": [
+        "T63_45_recto"
+    ],
+    "landscap": [
+        "T12_144_recto"
+    ],
+    "hous": [
+        "T12_144_recto",
+        "T49_195_recto"
+    ],
+    "\u548c\n": [
+        "T12_144_recto"
+    ],
+    "\u548c": [
+        "T12_144_recto"
+    ],
+    "crisco": [
+        "F25_121_recto"
+    ],
+    "\u7537\u56db\nsso\nesso\n3\n": [
+        "F25_121_recto"
+    ],
+    "\u7537": [
+        "F25_121_recto"
+    ],
+    "\u56db": [
+        "F25_121_recto"
+    ],
+    "sso": [
+        "F25_121_recto"
+    ],
+    "esso": [
+        "F25_121_recto"
+    ],
+    "3": [
+        "F25_121_recto"
+    ],
+    "top": [
+        "F19_27_recto",
+        "T49_195_recto",
+        "T11_97_recto",
+        "T10_104_recto",
+        "F19_189_recto",
+        "F20_212_recto",
+        "F19_62_recto"
     ],
     "bag": [
-        "F56_33_recto"
+        "F19_27_recto",
+        "F20_212_recto"
     ],
     "luggag": [
-        "F56_33_recto"
+        "F19_27_recto",
+        "F20_212_recto"
     ],
-    "34_5\nviiis-xs si\u00e8cle\ncarreau\nvuang-binh\nmy-\u0111\u01b0c\n34 5\n": [
-        "F56_33_recto"
+    "\u5fe0\u6b66\u7960\n": [
+        "F19_27_recto"
     ],
-    "34_5": [
-        "F56_33_recto"
+    "\u5fe0\u6b66": [
+        "F19_27_recto"
     ],
-    "viiis-xs": [
-        "F56_33_recto"
+    "\u7960": [
+        "F19_27_recto"
     ],
-    "si\u00e8cle": [
-        "F56_33_recto"
+    "media": [
+        "T11_87_recto"
     ],
-    "carreau": [
-        "F56_33_recto"
+    "shelv": [
+        "T11_87_recto"
     ],
-    "vuang-binh": [
-        "F56_33_recto"
+    "glass": [
+        "T11_87_recto"
     ],
-    "my-\u0111\u01b0c": [
-        "F56_33_recto"
+    "visual": [
+        "Cina5_331_recto",
+        "T31_30_recto",
+        "F56_17_recto",
+        "Cina4_34_recto",
+        "T5_56_recto"
     ],
-    "34": [
-        "F56_33_recto"
+    "coat": [
+        "Cina5_331_recto",
+        "F26_117_recto",
+        "T11_180_recto"
     ],
-    "sea": [
-        "T12_43_recto"
+    "famili": [
+        "T49_195_recto",
+        "F26_117_recto",
+        "T10_104_recto",
+        "F19_189_recto"
+    ],
+    "home": [
+        "T49_195_recto"
+    ],
+    "\u3055i\u307e\u308a\u3092\u5b88\u3063\u3066\u3088\u3044\u304d\n\u307e\u3061\n\u30ea\u3082\u5b88\u3063\u3066\u3088\u3044\u307e\u3061\u306b\n": [
+        "T35_220_recto"
+    ],
+    "\u3055": [
+        "T35_220_recto"
+    ],
+    "i": [
+        "T35_220_recto"
+    ],
+    "\u307e\u308a": [
+        "T35_220_recto"
+    ],
+    "\u3092": [
+        "T35_220_recto"
+    ],
+    "\u5b88\u3063": [
+        "T35_220_recto"
+    ],
+    "\u3066": [
+        "T35_220_recto"
+    ],
+    "\u3088\u3044": [
+        "T35_220_recto"
+    ],
+    "\u304d": [
+        "T35_220_recto"
+    ],
+    "\u307e\u3061": [
+        "T35_220_recto"
+    ],
+    "\u30ea": [
+        "T35_220_recto"
+    ],
+    "\u3082": [
+        "T35_220_recto"
+    ],
+    "\u306b": [
+        "T35_220_recto"
+    ],
+    "human": [
+        "T27_3_recto",
+        "F20_212_recto",
+        "T27_16_recto"
+    ],
+    "advertis": [
+        "T36_34_recto"
+    ],
+    "font": [
+        "T36_34_recto"
+    ],
+    "brand": [
+        "T36_34_recto"
+    ],
+    "gaziantepspor": [
+        "T36_34_recto"
+    ],
+    "door": [
+        "T36_34_recto"
+    ],
+    "yarauke\nmassage\nrisky to be aids affected\nif you not use condom\na qusms\n10_00- - 00u_\n\u0915\u0915\npull\n1g\n": [
+        "T36_34_recto"
+    ],
+    "yarauke": [
+        "T36_34_recto"
+    ],
+    "massage": [
+        "T36_34_recto"
+    ],
+    "risky": [
+        "T36_34_recto"
+    ],
+    "to": [
+        "T36_34_recto"
+    ],
+    "be": [
+        "T36_34_recto"
+    ],
+    "aids": [
+        "T36_34_recto"
+    ],
+    "affected": [
+        "T36_34_recto"
+    ],
+    "if": [
+        "T36_34_recto"
+    ],
+    "you": [
+        "T36_34_recto"
+    ],
+    "not": [
+        "T36_34_recto"
+    ],
+    "use": [
+        "T36_34_recto"
+    ],
+    "condom": [
+        "T36_34_recto"
+    ],
+    "a": [
+        "T36_34_recto"
+    ],
+    "qusms": [
+        "T36_34_recto"
+    ],
+    "10_00-": [
+        "T36_34_recto"
+    ],
+    "-": [
+        "T36_34_recto"
+    ],
+    "00u_": [
+        "T36_34_recto"
+    ],
+    "\u0915\u0915": [
+        "T36_34_recto"
+    ],
+    "pull": [
+        "T36_34_recto"
+    ],
+    "1g": [
+        "T36_34_recto"
+    ],
+    "skirt": [
+        "T11_97_recto",
+        "F20_212_recto"
+    ],
+    "footwear": [
+        "T11_97_recto",
+        "F19_62_recto"
+    ],
+    "shoe": [
+        "T11_97_recto"
+    ],
+    "sit": [
+        "F26_117_recto",
+        "T49_242_recto",
+        "F19_189_recto",
+        "F19_62_recto"
+    ],
+    "sculptur": [
+        "F56_17_recto",
+        "T10_96_recto"
+    ],
+    "statu": [
+        "F56_17_recto",
+        "T10_96_recto"
+    ],
+    "classic": [
+        "F56_17_recto"
+    ],
+    "stone": [
+        "F56_17_recto"
+    ],
+    "carv": [
+        "F56_17_recto"
+    ],
+    "fun": [
+        "T10_104_recto",
+        "F20_212_recto"
+    ],
+    "bottl": [
+        "T10_104_recto"
+    ],
+    "happi": [
+        "T49_242_recto"
+    ],
+    "turquois": [
+        "F20_212_recto"
+    ],
+    "travel": [
+        "F20_212_recto"
+    ],
+    "templ": [
+        "F20_212_recto"
+    ],
+    "cabinetri": [
+        "F20_212_recto"
+    ],
+    "monument": [
+        "T10_96_recto"
+    ],
+    "squar": [
+        "T10_96_recto"
+    ],
+    "light": [
+        "T10_96_recto"
+    ],
+    "histori": [
+        "Cina4_34_recto"
+    ],
+    "barechest": [
+        "T4_92_recto"
+    ],
+    "muscl": [
+        "T4_92_recto"
+    ],
+    "23\n": [
+        "F19_62_recto"
+    ],
+    "23": [
+        "F19_62_recto"
     ]
 }

@@ -293,5 +293,16 @@ $RECYCLE.BIN/
 
 .history
 data_processing/annotated_images.json
-data_processing/failed_images.json
+data_processing/annotation_failed_images.json
 data_processing/tagged_images.json
+data_processing/image_vectors.json
+data_processing/fvector_failed_images.json
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+*/.pickle/*
+
+*/.pt*
+data_processing/tagged_images.json
+data_processing/.ipynb_checkpoints/IIIF web scraping-checkpoint.ipynb
