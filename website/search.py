@@ -1,5 +1,6 @@
+from imageRetrieval import get_imagevector, get_similarity
 import string
-from itertools import chain
+from itertools import chain, islice
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.stem.porter import PorterStemmer
@@ -69,13 +70,37 @@ def search_photos(item, tag_collection, annotation_collection):
                     for res_dict in sorted_selected_photos if 'images' in res_dict]
     photo_sorted_flat = list(chain.from_iterable(photo_sorted))
     photo_results = list(set(photo_sorted_flat))
-    full_images = [list(annotation_collection.find({"label": res_image}))[
-        0] for res_image in photo_results]
+    full_images = []
+    for res_image in photo_results:
+        image_iiif = list(annotation_collection.find({"label": res_image}))
+        if image_iiif:
+            full_images.append(image_iiif[0])
     return full_images, search_items
 
 
 def search_country(country, collection):
-    return list(collection.find({ "annotation.country" : country}))
-    
+    return list(collection.find({"annotation.country": country}))
+
+
 def get_markers(collection):
-    return list(collection.find({"annotation.landmark_info" : {"$exists" : True}}))
+    return list(collection.find({"annotation.landmark_info": {"$exists": True}}))
+
+
+def search_similar_photos(image_file, vector_collection, annotation_collection, count=20):
+    upimage_vec = get_imagevector(image_file)
+    similarity = {}
+    # This dictionary stores the image label as key and the similarity with the uploaded image as value.
+    similarity = {dbimage["image"]: get_similarity(
+        upimage_vec, dbimage["feature_vec"]) for dbimage in vector_collection.find()}
+    # sort the images based on similarity
+    sorted_similarity = dict(
+        sorted(similarity.items(), key=lambda item: item[1], reverse=True))
+
+    # get the number of images based on count requested
+    selected_images = list(islice(sorted_similarity.keys(), count))
+    full_images = []
+    for res_image in selected_images:
+        image_iiif = list(annotation_collection.find({"label": res_image}))
+        if image_iiif:
+            full_images.append(image_iiif[0])
+    return full_images
