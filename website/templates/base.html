@@ -31,6 +31,22 @@
             var iiif = JSON.stringify(json, null, 3);
             document.getElementById("modal_iiif").innerHTML = iiif;
             document.getElementById("modal_full_img").src = link;
+            $("#colorise").val(link)
+            $("#colorise").attr("name", json["label"])
+        });
+
+        $("#colorise").on("click", function(e) {
+            $.ajax({
+                type: "POST",
+                url: "/colorise",
+                data: {
+                    link: $(this).val(),
+                    label: $(this).attr("name")
+                },
+                success: function(response) {
+                    console.log(response)
+                },
+            });
         });
     </script>
 
@@ -76,8 +92,8 @@
 
                 <div class="modal-body">
                     <img class="img-fluid" id="modal_full_img" src="">
-                    <button class="btn btn-primary" id="colorize">Colorize me !</button>
-                    <button class="btn btn-primary" id="colorize">Search similar photos</button>
+                    <button class="btn btn-primary" id="colorise">Colorise me !</button>
+                    <button class="btn btn-primary" id="search_similar">Search similar photos</button>
                     <hr class="mt-2 mb-5">
                     <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">IIIF annotation</h1>
                     <hr class="mt-2 mb-5">

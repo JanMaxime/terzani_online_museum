@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 import os
 import json
 from dotenv import load_dotenv
+from DeOldify.imagecolorise import colorise_me
 load_dotenv()
 
 
@@ -28,6 +29,14 @@ def allowed_file(filename):
 @app.route("/")
 def home():
     return render_template("home.html")
+
+
+@app.route("/colorise", methods=["POST"])
+def colorise():
+    link = request.form["link"]
+    label = request.form["label"]
+    image = colorise_me(link, label, 5)
+    return jsonify({"image" : image})
 
 
 @app.route("/gallery", methods=["GET", "POST"])
