@@ -4,9 +4,9 @@ import torch
 import os
 import warnings
 import pickle
-from deoldify.visualize import get_image_colorizer
-from deoldify import device
-from deoldify.device_id import DeviceId
+from .deoldify.visualize import get_image_colorizer
+from .deoldify import device
+from .deoldify.device_id import DeviceId
 device.set(device=DeviceId.GPU1)
 torch.backends.cudnn.benchmark = True
 warnings.filterwarnings("ignore", category=UserWarning,
