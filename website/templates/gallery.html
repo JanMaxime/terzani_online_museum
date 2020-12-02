@@ -100,6 +100,7 @@
                 type: "POST",
                 data: {
                     "country": e.target.feature.properties.name,
+                    "page_number": 0
                 },
                 success: function(response) {
                     $('div#displayImages').html(response.data);

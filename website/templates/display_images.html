@@ -3,6 +3,10 @@
 <a href="#iiif" class="col-3 open-iiif" data-iiif="{{iiif_and_link[0]}}" data-toggle="modal">
     <img class="img-fluid img-thumbnail" src="{{iiif_and_link[1]}}">
 </a>
-
-
 {%endfor%}
+
+<div class="col-12">
+    {% for i in range(iiifs_and_links|length // page_size + 1) %} {% if i == page_number %}
+    <a name="change">{{i+1}}</a> {% else %}
+    <a class="change_page" href="#change" value={{i}}>{{i+1}}</a> {% endif %} {% endfor %}
+</div>
