@@ -8,7 +8,7 @@
 <script>
     function goToSearch(name) {
         var form = $('<form action="/search" method="post" style="visibility: hidden;">' +
-            '<input type="text" name="item" value="' + name + '" />  <button id="submit_button" type="submit" name="submit" value="text_search" class="btn btn-primary">Search text</button>' +
+            '<input type="text" name="item" value="' + name + '" /> <input  id="page_number" name="page_number" style="visibility: hidden;" type="number" value="0" /> <button id="submit_button" type="submit" name="submit" value="text_search" class="btn btn-primary">Search text</button>' +
             '</form>');
         $('body').append(form);
         $("#submit_button").click()

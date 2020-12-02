@@ -11,9 +11,9 @@ load_dotenv()
 app = Flask(__name__)
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
-sample_annotations = mongo.db["sample_annotations"]
-sample_tags = mongo.db["sample_taggings"]
-sample_imageVectors = mongo.db["sample_image_vecs"]
+sample_annotations = mongo.db["terzani_annotations"]
+sample_tags = mongo.db["terzani_taggings"]
+sample_imageVectors = mongo.db["terzani_image_vecs"]
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpeg', 'jpg'])
