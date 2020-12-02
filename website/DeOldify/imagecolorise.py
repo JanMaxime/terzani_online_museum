@@ -52,8 +52,3 @@ def colorise_me(source_url, source_label, render_factor):
         color_image = cached_color_images[source_label]
 
     return color_image
-
-
-source_url = 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Raceland_Louisiana_Beer_Drinkers_Russell_Lee.jpg'
-res = colorise_me(source_url, "source_label", render_factor=5)
-res.show()
