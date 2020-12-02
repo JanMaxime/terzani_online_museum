@@ -306,3 +306,4 @@ data_processing/fvector_failed_images.json
 */.pt*
 data_processing/tagged_images.json
 data_processing/.ipynb_checkpoints/IIIF web scraping-checkpoint.ipynb
+website/DeOldify/models/ColorizeStable_gen.pth
