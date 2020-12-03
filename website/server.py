@@ -40,14 +40,16 @@ def gallery():
         display_markers = request.form.get("display_markers", False)
         if display_markers:
             results = get_markers(sample_annotations)
-            lat_lng_name = [result["annotation"]["landmark_info"] for result in results]
+            lat_lng_name = [result["annotation"]["landmark_info"]
+                            for result in results]
             return jsonify({"lat_lng_name": lat_lng_name})
         else:
             page_number = int(request.form["page_number"])
-            results = search_country(request.form["country"], sample_annotations, page_number, PAGE_SIZE)
+            results = search_country(
+                request.form["country"], sample_annotations, page_number, PAGE_SIZE)
             iiifs_and_links = [(json.dumps(result["annotation"]["iiif"]), result["annotation"]["iiif"]["images"]
                                 [0]["resource"]["service"]["@id"][:-4] + "/square/360,/0/default.jpg") for result in results]
-            return jsonify({"data": render_template("display_images.html", iiifs_and_links=iiifs_and_links, page_size = PAGE_SIZE, page_number = page_number)})
+            return jsonify({"data": render_template("display_images.html", iiifs_and_links=iiifs_and_links, page_size=PAGE_SIZE, page_number=page_number)})
 
     return render_template("gallery.html")
 
@@ -91,7 +93,8 @@ def search_page():
             else:
                 image_file = request.files["image_file"]
                 if image_file and allowed_file(image_file.filename):
-                    similar_photos = search_similar_photos(image_file, sample_imageVectors, sample_annotations, count=20)
+                    similar_photos = search_similar_photos(
+                        image_file, sample_imageVectors, sample_annotations, count=20)
                     for res_photo in similar_photos:
                         photo = res_photo["annotation"]
                         new_item = (json.dumps(photo["iiif"]), [
@@ -99,7 +102,12 @@ def search_page():
                         number_of_results += len(new_item[1])
                         iiif_and_links.append(new_item)
 
-    return render_template("search.html", results=iiif_and_links, number_of_results=number_of_results, display_bb=display_bb, item=item, cold_start=request.method == "GET", page_size = PAGE_SIZE, page_number = page_number)
+    return render_template("search.html", results=iiif_and_links, number_of_results=number_of_results, display_bb=display_bb, item=item, cold_start=request.method == "GET", page_size=PAGE_SIZE, page_number=page_number)
+
+
+@app.route("/about")
+def about_page():
+    return render_template("about.html")
 
 
 if __name__ == "__main__":
