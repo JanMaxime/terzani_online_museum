@@ -61,7 +61,7 @@ def gallery():
         elif len(landmark_name) > 0:
             results = get_markers(sample_annotations)
             iiifs_and_links = [(json.dumps(result["annotation"]["iiif"]), result["annotation"]["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/square/360,/0/default.jpg") for result in results if next(iter(result["annotation"]["landmark_info"])) == landmark_name]
-            return jsonify({"data": render_template("display_images.html", country=landmark_name, iiifs_and_links=iiifs_and_links, page_size = PAGE_SIZE, page_number = 0)})
+            return jsonify({"data": render_template("display_images.html", number_of_results = 0, country=landmark_name, iiifs_and_links=iiifs_and_links, page_size = PAGE_SIZE, page_number = 0)})
         else:
             page_number = int(request.form["page_number"])
             results, number_of_total_results = search_country(request.form["country"], sample_annotations, page_number, PAGE_SIZE)
