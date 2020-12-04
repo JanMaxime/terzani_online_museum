@@ -1,12 +1,34 @@
- {% for iiif_and_link in iiifs_and_links %}
+<script>
+    $(".change_page").on("click", function(e) {
+        var page = $(this).attr("value");
+        $("#page_number").val(page);
+        $("#submit_text_search").click();
+
+        $.ajax({
+            url: "/gallery",
+            type: "POST",
+            data: {
+                "country": "{{country}}",
+                "page_number": page
+            },
+            success: function(response) {
+                $('div#displayImages').html(response.data);
+            },
+        });
+    });
+</script>
+
+<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">{{country}}</h1>
+<hr class="mt-2 mb-2">
+<div class="col-12 mb-2">
+    <a>Page </a> {% for i in range(iiifs_and_links|length // page_size + 1) %} {% if i == page_number %}
+    <a>{{i+1}}</a> {% else %}
+    <a class="change_page" href="#change" value={{i}}>{{i+1}}</a> {% endif %} {% endfor %}
+</div>
+
+{% for iiif_and_link in iiifs_and_links %}
 
 <a href="#iiif" class="col-3 open-iiif" data-iiif="{{iiif_and_link[0]}}" data-toggle="modal">
     <img class="img-fluid img-thumbnail" src="{{iiif_and_link[1]}}">
 </a>
 {%endfor%}
-
-<div class="col-12">
-    {% for i in range(iiifs_and_links|length // page_size + 1) %} {% if i == page_number %}
-    <a name="change">{{i+1}}</a> {% else %}
-    <a class="change_page" href="#change" value={{i}}>{{i+1}}</a> {% endif %} {% endfor %}
-</div>

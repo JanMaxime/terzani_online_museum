@@ -38,16 +38,21 @@ def gallery():
 
     if request.method == "POST":
         display_markers = request.form.get("display_markers", False)
+        landmark_name = request.form.get("landmark_name", "")
         if display_markers:
             results = get_markers(sample_annotations)
             lat_lng_name = [result["annotation"]["landmark_info"] for result in results]
             return jsonify({"lat_lng_name": lat_lng_name})
+        elif len(landmark_name) > 0:
+            results = get_markers(sample_annotations)
+            iiifs_and_links = [(json.dumps(result["annotation"]["iiif"]), result["annotation"]["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/square/360,/0/default.jpg") for result in results if next(iter(result["annotation"]["landmark_info"])) == landmark_name]
+            return jsonify({"data": render_template("display_images.html", country=landmark_name, iiifs_and_links=iiifs_and_links, page_size = PAGE_SIZE, page_number = 0)})
         else:
             page_number = int(request.form["page_number"])
             results = search_country(request.form["country"], sample_annotations, page_number, PAGE_SIZE)
             iiifs_and_links = [(json.dumps(result["annotation"]["iiif"]), result["annotation"]["iiif"]["images"]
                                 [0]["resource"]["service"]["@id"][:-4] + "/square/360,/0/default.jpg") for result in results]
-            return jsonify({"data": render_template("display_images.html", iiifs_and_links=iiifs_and_links, page_size = PAGE_SIZE, page_number = page_number)})
+            return jsonify({"data": render_template("display_images.html", country=request.form["country"], iiifs_and_links=iiifs_and_links, page_size = PAGE_SIZE, page_number = page_number)})
 
     return render_template("gallery.html")
 
@@ -62,7 +67,6 @@ def search_page():
     if request.method == "POST":
         if request.form["submit"] == "text_search":
             page_number = int(request.form["page_number"])
-            print(page_number)
             item = request.form["item"]
             display_bb = request.form.get("display_bb", False)
             photos, searched_items, number_of_results = search_photos(
