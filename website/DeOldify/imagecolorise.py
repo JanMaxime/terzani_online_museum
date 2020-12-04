@@ -33,6 +33,9 @@ def colorise_me(source_url, source_label, render_factor):
     except IOError:
         cached_color_images = {}
 
+
+    colorised_image_link = "./static/colorised_images/"+source_label+".png"
+
     if source_label not in cached_color_images:
         if not os.path.exists('models'):
             os.makedirs('models')
@@ -45,10 +48,10 @@ def colorise_me(source_url, source_label, render_factor):
         color_image = colorise_image(source_url, render_factor)
         cached_color_images[source_label] = color_image
 
-        with open("./cached_color_images/cached_color_images.pickle", 'wb') as handle:
-            pickle.dump(cached_color_images, handle,
-                        protocol=pickle.HIGHEST_PROTOCOL)
-    else:
-        color_image = cached_color_images[source_label]
+        color_image.save(colorised_image_link)
 
-    return color_image
+        with open("./cached_color_images/cached_color_images.pickle", 'wb') as handle:
+            pickle.dump(cached_color_images, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+    return colorised_image_link

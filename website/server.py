@@ -16,9 +16,10 @@ sample_annotations = mongo.db["sample_annotations"]
 sample_tags = mongo.db["sample_taggings"]
 sample_imageVectors = mongo.db["sample_image_vecs"]
 
-UPLOAD_FOLDER = 'uploads'
+COLORISED_FOLDER = os.path.join('static', 'colorised_images')
+
 ALLOWED_EXTENSIONS = set(['png', 'jpeg', 'jpg'])
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = COLORISED_FOLDER
 
 
 def allowed_file(filename):
@@ -31,12 +32,17 @@ def home():
     return render_template("home.html")
 
 
+@app.route("/colorised/<label>", methods=["GET"])
+def colorised(label):
+    return "<img style='display:block;width:100%;height:100%;object-fit:cover;'src = '/static/colorised_images/" + label + ".png'>"
+
+
 @app.route("/colorise", methods=["POST"])
 def colorise():
     link = request.form["link"]
     label = request.form["label"]
-    image = colorise_me(link, label, 5)
-    return jsonify({"image" : image})
+    colorise_me(link, label, 5)
+    return label
 
 
 @app.route("/gallery", methods=["GET", "POST"])

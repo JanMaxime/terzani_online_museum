@@ -34,20 +34,6 @@
             $("#colorise").val(link)
             $("#colorise").attr("name", json["label"])
         });
-
-        $("#colorise").on("click", function(e) {
-            $.ajax({
-                type: "POST",
-                url: "/colorise",
-                data: {
-                    link: $(this).val(),
-                    label: $(this).attr("name")
-                },
-                success: function(response) {
-                    console.log(response)
-                },
-            });
-        });
     </script>
 
     {% block scripts %}{%endblock%}
@@ -83,7 +69,10 @@
         <div class="modal-dialog" role="document" style="width: auto; max-width: 1000px;">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Photo details</h5>
+                    <h5 class="modal-title col-2" id="exampleModalLongTitle">Photo details</h5>
+                    <button class="btn btn-primary col-2" id="colorise">Colorise the photo</button>
+                    <div id="colorised_link" class="col-3"></div>
+                    <button class="btn btn-primary col-3" id="search_similar">Search similar photos</button>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -92,8 +81,7 @@
 
                 <div class="modal-body">
                     <img class="img-fluid" id="modal_full_img" src="">
-                    <button class="btn btn-primary" id="colorise">Colorise me !</button>
-                    <button class="btn btn-primary" id="search_similar">Search similar photos</button>
+
                     <hr class="mt-2 mb-5">
                     <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">IIIF annotation</h1>
                     <hr class="mt-2 mb-5">
@@ -111,6 +99,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+
+    <script>
+        $("#colorise").on("click", function(e) {
+            console.log("yo")
+            $.ajax({
+                type: "POST",
+                url: "/colorise",
+                data: {
+                    link: $(this).val(),
+                    label: $(this).attr("name")
+
+                },
+                success: function(response) {
+                    var $input = $("<a href = '/colorised/" + response + "' target='_blank') }}>See colorised photo</a>");
+                    $input.appendTo($("#colorised_link"));
+
+                },
+            });
+        });
+    </script>
 
 </body>
 
