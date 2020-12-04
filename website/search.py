@@ -83,7 +83,7 @@ def search_photos(item, tag_collection, annotation_collection, page_number, page
 
 
 def search_country(country, collection, page_number, page_size):
-    return list(collection.find({"annotation.country": country}).skip(page_number * page_size).limit(page_size))
+    return list(collection.find({"annotation.country": country}).skip(page_number * page_size).limit(page_size)), collection.count({"annotation.country": country})
 
 
 def get_markers(collection):
