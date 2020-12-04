@@ -6,12 +6,17 @@
     }
 </style>
 <script>
-    function goToSearch(name) {
-        var form = $('<form action="/search" method="post" style="visibility: hidden;">' +
-            '<input type="text" name="item" value="' + name + '" />  <button id="submit_button" type="submit" name="submit" value="text_search" class="btn btn-primary">Search text</button>' +
-            '</form>');
-        $('body').append(form);
-        $("#submit_button").click()
+    function showLandmarkPhotos(name) {
+        $.ajax({
+            url: "/gallery",
+            type: "POST",
+            data: {
+                "landmark_name": name,
+            },
+            success: function(response) {
+                $('div#displayImages').html(response.data);
+            },
+        });
     }
 </script>
 {%endblock%} {% block body %}
@@ -22,7 +27,7 @@
             <div class="sticky-top">
                 <div id="map" style="width: 500px; height: 400px"></div>
 
-                <button id="markers" class="btn btn-primary" data-toggle="collapse">Show landmarks</button>
+                <button id="markers" class="btn btn-primary mt-3" data-toggle="collapse">Show landmarks</button>
                 </button>
             </div>
         </div>
@@ -100,6 +105,7 @@
                 type: "POST",
                 data: {
                     "country": e.target.feature.properties.name,
+                    "page_number": 0
                 },
                 success: function(response) {
                     $('div#displayImages').html(response.data);
@@ -154,7 +160,7 @@
                         var lat = response["lat_lng_name"][i][name]["latitude"]
                         var lng = response["lat_lng_name"][i][name]["longitude"]
                         var marker = new L.marker([lat, lng]).addTo(map)
-                        marker.bindPopup('<h1>' + name + '</h1><button class="btn btn-primary search_photos" value="' + name + '" onClick="goToSearch(this.value)">Search Photos</button>')
+                        marker.bindPopup('<h1>' + name + '</h1><button class="btn btn-primary search_photos" value="' + name + '" onClick="showLandmarkPhotos(this.value)">Show Photos</button>')
                     }
                 },
             });
