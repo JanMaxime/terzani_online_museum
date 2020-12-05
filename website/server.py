@@ -36,7 +36,7 @@ def home():
 
 @app.route("/colorised/<label>", methods=["GET"])
 def colorised(label):
-    return "<img style='display:block;width:100%;height:100%;object-fit:cover;'src = '/static/colorised_images/" + label + ".png'>"
+    return "<center> <img style='max-width: 100%;max-height: 100vh;height:auto;'src = '/static/colorised_images/" + label + ".png'> </center>"
 
 
 @app.route("/colorise", methods=["POST"])
