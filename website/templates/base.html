@@ -74,7 +74,7 @@
                     <div id="colorised_link" class="col-3"></div>
                     <button class="btn btn-primary col-3" id="search_similar">Search similar photos</button>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" id="close_button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
                 </div>
@@ -102,7 +102,7 @@
 
     <script>
         $("#colorise").on("click", function(e) {
-            console.log("yo")
+            $(this).attr("disabled", "disabled")
             $.ajax({
                 type: "POST",
                 url: "/colorise",
@@ -117,6 +117,10 @@
 
                 },
             });
+        });
+
+        $("#close_button").on("click", function(e) {
+            $("colorised_link").innerHTML = "";
         });
     </script>
 
