@@ -102,7 +102,7 @@
 
     <script>
         $("#colorise").on("click", function(e) {
-            $(this).attr("disabled", "disabled")
+            document.getElementById("colorise").disabled = true;
             $.ajax({
                 type: "POST",
                 url: "/colorise",
@@ -119,8 +119,9 @@
             });
         });
 
-        $("#close_button").on("click", function(e) {
-            $("colorised_link").innerHTML = "";
+        $('#iiif').on('hidden.bs.modal', function() {
+            $("#colorised_link").html("");
+            document.getElementById("colorise").disabled = false;
         });
     </script>
 
