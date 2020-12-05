@@ -1,8 +1,11 @@
 flask
 Flask-PyMongo
-dnspython
 nltk
-dotenv
+dnspython
+python-dotenv
 google-cloud-vision
 bs4
-urllib
+fastai
+jupyterlab
+opencv-python
+pillow

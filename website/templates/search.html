@@ -22,7 +22,7 @@
                       <input type="checkbox" style="vertical-align: middle;"class="form-check-input float-right" name="display_bb" {% if display_bb%}checked{%endif%}>Only show bounding box
                     </label >      
                 </div>
-             <button id="submit_text_search" type="submit" name="submit" value="text_search" class="btn btn-primary">Search text</button>
+             <button id="submit_text_search" type="submit" name="submit" value="text_search" class="btn btn-primary mt-2">Search text</button>
              <input  id="page_number" name="page_number" style='visibility: hidden;' type='number' value='0' />
             </form>
 
@@ -33,11 +33,11 @@
 
             </div>
             <div class ="custom-file">
-                <input type="file" name="image_file" class="custom-file-input" id="customFile" accept=".png,.jpg,.jpeg">
+                <input type="file" name="image_file" class="custom-file-input" id="customFile" accept=".png,.jpg,.jpeg" required>
                 <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
 
-                    <button type="submit" name="submit" value="image_search" class="btn btn-primary">Search Image</button>
+                    <button type="submit" name="submit" value="image_search" class="btn btn-primary mt-3">Search Image</button>
                 </form>
 
 
@@ -47,7 +47,13 @@
         <div class="col-9">
             {% if results|length > 0%}
             <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Page {{page_number+1}} of {{number_of_results // page_size + 1}} - {{number_of_results}} total results {% if display_bb %}on {{results|length}} images{%endif%} </h1>
-            <hr class="mt-2 mb-5">
+
+            <hr class="mt-2 mb-3">
+            <div class="col-12 mb-2">
+                <a>Page</a> {% for i in range(number_of_results // page_size + 1) %} {% if i == page_number %}
+                <a name="change">{{i+1}}</a> {% else %}
+                <a class="change_page" href="#" value={{i}}>{{i+1}}</a> {% endif %} {% endfor %}
+            </div>
             <div class="text-center text-lg-left">
                 {% for iiif_and_links in results %} {% for link in iiif_and_links[1] %}
                 <a href="#iiif" class="col-3 open-iiif mb-5" data-iiif="{{iiif_and_links[0]}}" data-toggle="modal">
@@ -57,11 +63,6 @@
                 {% endfor %} {% endfor %}
 
 
-            </div>
-            <div class="col-12">
-                {% for i in range(number_of_results // page_size + 1) %} {% if i == page_number %}
-                <a name="change">{{i+1}}</a> {% else %}
-                <a class="change_page" href="#change" value={{i}}>{{i+1}}</a> {% endif %} {% endfor %}
             </div>
             {%elif not cold_start%}
             <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">No results</h1>
@@ -88,8 +89,8 @@
 
     $(".custom-file-input").on("change", function() {
         var fileName = $(this).val().split("\\").pop();
-        if (fileName.length > 20) {
-            fileName = fileName.slice(0, 20) + "..."
+        if (fileName.length > 40) {
+            fileName = fileName.slice(0, 40) + "..."
         }
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
     });
