@@ -124,6 +124,10 @@ def search_page():
 
     return render_template("search.html", results=iiif_and_links, number_of_results=number_of_results, display_bb=display_bb, item=item, cold_start=request.method == "GET", page_size=PAGE_SIZE, page_number=page_number)
 
+@app.route("/about")
+def about_page():
+    return render_template("about.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
