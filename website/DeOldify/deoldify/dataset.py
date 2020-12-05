@@ -3,6 +3,7 @@ from fastai import *
 from fastai.core import *
 from fastai.vision.transform import get_transforms
 from fastai.vision.data import ImageImageList, ImageDataBunch, imagenet_stats
+import os
 from .augs import noisify
 
 
@@ -17,7 +18,7 @@ def get_colorize_data(
     stats: tuple = imagenet_stats,
     xtra_tfms=[],
 ) -> ImageDataBunch:
-    
+
     src = (
         ImageImageList.from_folder(crappy_path, convert_mode='RGB')
         .use_partial_data(sample_pct=keep_pct, seed=random_seed)
@@ -42,7 +43,9 @@ def get_colorize_data(
 
 
 def get_dummy_databunch() -> ImageDataBunch:
-    path = Path('./dummy/')
+    # path = Path('./dummy/')
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    path = os.path.normpath(current_directory + os.sep + os.pardir+"/dummy/")
     return get_colorize_data(
         sz=1, bs=1, crappy_path=path, good_path=path, keep_pct=0.001
     )
