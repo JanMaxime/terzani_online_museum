@@ -1,22 +1,10 @@
 from fastai.core import *
 from fastai.vision import *
-from matplotlib.axes import Axes
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from .filters import IFilter, MasterFilter, ColorizerFilter
 from .generators import gen_inference_deep, gen_inference_wide
-from tensorboardX import SummaryWriter
-from scipy import misc
 from PIL import Image
-import ffmpeg
-import youtube_dl
-import gc
 import requests
 from io import BytesIO
-import base64
-from IPython import display as ipythondisplay
-from IPython.display import HTML
-from IPython.display import Image as ipythonimage
 import cv2
 
 
@@ -79,8 +67,8 @@ class ModelImageVisualizer:
         return filtered_image
 
 
-def get_image_colorizer(render_factor: int = 35) -> ModelImageVisualizer:
-    return get_stable_image_colorizer(render_factor=render_factor)
+def get_image_colorizer(folder, render_factor: int = 35) -> ModelImageVisualizer:
+    return get_stable_image_colorizer(root_folder=folder, render_factor=render_factor)
 
 
 def get_stable_image_colorizer(
@@ -90,7 +78,7 @@ def get_stable_image_colorizer(
     render_factor: int = 35
 ) -> ModelImageVisualizer:
     learn = gen_inference_wide(
-        root_folder=root_folder, weights_name=weights_name)
+        root_folder=Path(root_folder), weights_name=weights_name)
     filtr = MasterFilter([ColorizerFilter(learn=learn)],
                          render_factor=render_factor)
     vis = ModelImageVisualizer(filtr)
