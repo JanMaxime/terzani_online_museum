@@ -1,5 +1,5 @@
 # Import Vison API related libraries
-from ..utils.types import Terzani_Photo
+from ..utils.types import IIIF_Photo
 from typing import List, Dict
 from google.cloud import vision
 from google.cloud.vision_v1 import types
@@ -110,12 +110,12 @@ def clean_text(text: str, lower: bool = True, rmv_punc: bool = True, stem: bool 
     return cleaned_text
 
 
-def get_annotation(photo: Terzani_Photo, client: vision.ImageAnnotatorClient):
+def get_annotation(photo: IIIF_Photo, client: vision.ImageAnnotatorClient):
     """
     This function accepts the photo, the google vision client and
     returns the annotation provided by Google Vision API
 
-    :param photo (Terzani_Photo): The photo for which the annotation is needed.
+    :param photo (IIIF_Photo): The photo for which the annotation is needed.
     :param client (vision.ImageAnnotatorClient): The client to call the Google Vision Annotation API
     :return result (Dict): The result of annotation as a dictionary
     """

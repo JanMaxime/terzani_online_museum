@@ -1,4 +1,4 @@
-class Terzani_Photo(object):
+class IIIF_Photo(object):
     def __init__(self, iiif, country):
         self.iiif = iiif
         self.country = country

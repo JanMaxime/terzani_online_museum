@@ -5,7 +5,7 @@ import urllib.request
 from purl import URL
 from typing import List, Union
 
-from ..utils.types import Terzani_Photo
+from ..utils.types import IIIF_Photo
 
 
 def valid_collection(tag: str, unsupported_collections: List) -> Union[str, None]:
@@ -70,7 +70,7 @@ def get_iiif_collection(sub_collection_url: URL, collection_country: str) -> Lis
         if entry["label"] == None:
             continue
         if entry["label"].lower().endswith("recto"):
-            sub_collection_iiif.append(Terzani_Photo(
+            sub_collection_iiif.append(IIIF_Photo(
                 entry, collection_country))
 
     return sub_collection_iiif
