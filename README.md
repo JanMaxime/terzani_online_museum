@@ -42,20 +42,20 @@ The photo annotation on a collection can be performed using the `create_database
 
 ```json
 {
-    "data_folder": <folder to store data>,
-    "scrap_image_iiif": <Boolean to indicate if the image information needs to be scraped from a IIIF server>,
-    "collection_url": <URL of the collection>,
-    "unsupported_collections": <List of (string) collection ids to be neglected>,
-    "col_cntry_json": <Path to a Json file providing country mapping to each collection>,
-    "server": <The URL of the IIIF server containing the collection>,
-    "manifest": <Path to the manifest Json in the server>,
-    "annotate_iiif": <Boolean to indicate if the image needs to be annotated using Vison API>,
-    "update_db": <Boolean to indicate if the database needs to be updated>,
-    "db_name": <Name of the Mongo Database>,
-    "tag_collection_name": <Name of the Image tag collection in Mongo Database>,
-    "annotation_collection_name": <Name of the Image annotation collection in Mongo Database>,
-    "fvector_collection_name": <Name of the Image feature vector collection in Mongo Database>,
-    "nu_photos": <Number of images to be processed. If left empty all images are processed. If a number is provided, those many images are randomly sampled from the collection>
+  "data_folder": "<folder to store data>",
+  "scrap_image_iiif": "<Boolean to indicate if the image information needs to be scraped from a IIIF server>",
+  "collection_url": "<URL of the collection>",
+  "unsupported_collections": "<List of (string) collection ids to be neglected>",
+  "col_cntry_json": "<Path to a Json file providing country mapping to each collection>",
+  "server": "<The URL of the IIIF server containing the collection>",
+  "manifest": "<Path to the manifest Json in the server>",
+  "annotate_iiif": "<Boolean to indicate if the image needs to be annotated using Vison API>",
+  "update_db": "<Boolean to indicate if the database needs to be updated>",
+  "db_name": "<Name of the Mongo Database>",
+  "tag_collection_name": "<Name of the Image tag collection in Mongo Database>",
+  "annotation_collection_name": "<Name of the Image annotation collection in Mongo Database>",
+  "fvector_collection_name": "<Name of the Image feature vector collection in Mongo Database>",
+  "nu_photos": "<Number of images to be processed. If left empty all images are processed. If a number is provided, those many images are randomly sampled from the collection>"
 }
 ```
 
