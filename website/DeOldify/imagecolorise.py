@@ -44,6 +44,8 @@ def colorise_me(source_url, source_label, render_factor):
         current_directory + os.sep + os.pardir+"/static")
     color_images_dir = os.path.join(
         website_static_images, 'colorised_images')
+    if not os.path.exists(color_images_dir):
+        os.makedirs(color_images_dir)
     colorised_image_link = os.path.join(color_images_dir, source_label+".png")
 
     if source_label not in cached_color_images:
