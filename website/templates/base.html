@@ -110,7 +110,7 @@
                 type: "POST",
                 url: "/colorise",
                 data: {
-                    link: $(this).val(),
+                    link: $(this).val().substring(16), //truncate the proxy url
                     label: $(this).attr("name")
 
                 },
