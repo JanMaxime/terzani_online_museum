@@ -24,6 +24,7 @@ def colorise_image(source_url, current_directory, render_factor=20):
 
 def colorise_me(source_url, source_label, render_factor):
 
+    source_url = "http://dl.cini.it/files/original/" + source_url
     current_directory = os.path.dirname(os.path.realpath(__file__))
 
     cached_color_images_dir = os.path.join(

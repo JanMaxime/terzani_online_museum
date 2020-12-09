@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/static/css/one-page-wonder.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link type="text/css" rel="stylesheet" href="/static/js/galleria-1.6.1/dist/themes/azur/galleria.azur.min.css">
@@ -27,7 +27,7 @@
     <script>
         $(document).on("click", ".open-iiif", function() {
             var json = $(this).data('iiif')
-            var link = json["images"][0]["resource"]["@id"]
+            var link = json["images"][0]["resource"]["@id"].replace("http://dl.cini.it/files/original", "/image_original")
             var iiif = JSON.stringify(json, null, 3);
             document.getElementById("modal_iiif").innerHTML = iiif;
             document.getElementById("modal_full_img").src = link;
@@ -110,7 +110,7 @@
                 type: "POST",
                 url: "/colorise",
                 data: {
-                    link: $(this).val(),
+                    link: $(this).val().substring(16), //truncate the proxy url
                     label: $(this).attr("name")
 
                 },

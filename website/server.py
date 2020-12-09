@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 import os
 import json
 from dotenv import load_dotenv
+from requests import get
 from DeOldify.imagecolorise import colorise_me
 load_dotenv()
 
@@ -62,14 +63,14 @@ def gallery():
         elif len(landmark_name) > 0:
             results = get_markers(sample_annotations)
             iiifs_and_links = [(json.dumps(result["annotation"]["iiif"]), result["annotation"]["iiif"]["images"][0]["resource"]["service"]["@id"]
-                                [:-4] + "/square/360,/0/default.jpg") for result in results if next(iter(result["annotation"]["landmark_info"])) == landmark_name]
+                                [:-4].replace("http://dl.cini.it:8080/digilib/Scaler/IIIF", "/image_iiif") + "/square/360,/0/default.jpg") for result in results if next(iter(result["annotation"]["landmark_info"])) == landmark_name]
             return jsonify({"data": render_template("display_images.html", number_of_results=0, country=landmark_name, iiifs_and_links=iiifs_and_links, page_size=PAGE_SIZE, page_number=0)})
         else:
             page_number = int(request.form["page_number"])
             results, number_of_total_results = search_country(
                 request.form["country"], sample_annotations, page_number, PAGE_SIZE)
             iiifs_and_links = [(json.dumps(result["annotation"]["iiif"]), result["annotation"]["iiif"]["images"]
-                                [0]["resource"]["service"]["@id"][:-4] + "/square/360,/0/default.jpg") for result in results]
+                                [0]["resource"]["service"]["@id"][:-4].replace("http://dl.cini.it:8080/digilib/Scaler/IIIF", "/image_iiif") + "/square/360,/0/default.jpg") for result in results]
             return jsonify({"data": render_template("display_images.html", number_of_results=number_of_total_results, country=request.form["country"], iiifs_and_links=iiifs_and_links, page_size=PAGE_SIZE, page_number=page_number)})
 
     return render_template("gallery.html")
@@ -94,7 +95,7 @@ def search_page():
                 for res_photo in photos:
                     photo = res_photo["annotation"]
                     new_item = (json.dumps(photo["iiif"]), [
-                                photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/square/360,/0/default.jpg"])
+                                photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4].replace("http://dl.cini.it:8080/digilib/Scaler/IIIF", "/image_iiif") + "/square/360,/0/default.jpg"])
                     iiif_and_links.append(new_item)
             else:
                 for res_photo in photos:
@@ -103,7 +104,7 @@ def search_page():
                         box_key = next(
                             (key for key in photo["obj_boxes"] if sitem in key), None)
                         if box_key:
-                            new_item = (json.dumps(photo["iiif"]), [photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/" + str(
+                            new_item = (json.dumps(photo["iiif"]), [photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4].replace("http://dl.cini.it:8080/digilib/Scaler/IIIF", "/image_iiif") + "/" + str(
                                 box[0]) + "," + str(box[1]) + "," + str(box[2]) + "," + str(box[3]) + "/360,360/0/default.jpg" for box in photo["obj_boxes"][box_key]])
                             iiif_and_links.append(new_item)
         elif request.form["submit"] == "image_search":
@@ -118,16 +119,25 @@ def search_page():
                     for res_photo in similar_photos:
                         photo = res_photo["annotation"]
                         new_item = (json.dumps(photo["iiif"]), [
-                            photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4] + "/square/360,/0/default.jpg"])
+                            photo["iiif"]["images"][0]["resource"]["service"]["@id"][:-4].replace("http://dl.cini.it:8080/digilib/Scaler/IIIF", "/image_iiif") + "/square/360,/0/default.jpg"])
                         number_of_results += len(new_item[1])
                         iiif_and_links.append(new_item)
 
+    print(iiif_and_links)
     return render_template("search.html", results=iiif_and_links, number_of_results=number_of_results, display_bb=display_bb, item=item, cold_start=request.method == "GET", page_size=PAGE_SIZE, page_number=page_number)
 
 @app.route("/about")
 def about_page():
     return render_template("about.html")
 
+@app.route("/image_iiif/<path:subpath>")
+def show_iiif_image(subpath):
+    return get("http://dl.cini.it:8080/digilib/Scaler/IIIF/" + subpath).content
+
+@app.route("/image_original/<path:subpath>")
+def show_original_image(subpath):
+    return get("http://dl.cini.it/files/original/" + subpath).content
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port =8080)
