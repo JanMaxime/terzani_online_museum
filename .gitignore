@@ -302,4 +302,5 @@ data/
 */.pt*
 website/DeOldify/models/ColorizeStable_gen.pth
 website/static/colorised_images/*
+website/static/uploaded_images/*
 website/DeOldify/cached_color_images/cached_color_images.pickle
