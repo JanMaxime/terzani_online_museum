@@ -21,7 +21,7 @@ COLORISED_FOLDER = os.path.join('static', 'colorised_images')
 
 ALLOWED_EXTENSIONS = set(['png', 'jpeg', 'jpg'])
 app.config['UPLOAD_FOLDER'] = COLORISED_FOLDER
-
+app.config['IMAGE_FOLDER'] =  os.path.join('static', 'uploaded_images')
 PAGE_SIZE = 21
 
 
@@ -83,11 +83,14 @@ def search_page():
     page_number = 0
     display_bb = False
     item = ""
+    exact_word = False
+    uploaded_image_url = ""
     if request.method == "POST":
         if request.form["submit"] == "text_search":
             page_number = int(request.form["page_number"])
             item = request.form["item"]
             display_bb = request.form.get("display_bb", False)
+            exact_word = request.form.get("exact_word", False)
             photos, searched_items, number_of_results = search_photos(
                 item, sample_tags, sample_annotations, page_number, PAGE_SIZE)
 
@@ -114,6 +117,8 @@ def search_page():
             else:
                 image_file = request.files["image_file"]
                 if image_file and allowed_file(image_file.filename):
+                    image_file.save(os.path.join(app.config['IMAGE_FOLDER'], image_file.filename))
+                    uploaded_image_url = image_file.filename
                     similar_photos = search_similar_photos(
                         image_file, sample_imageVectors, sample_annotations, count=20)
                     for res_photo in similar_photos:
@@ -123,8 +128,7 @@ def search_page():
                         number_of_results += len(new_item[1])
                         iiif_and_links.append(new_item)
 
-    print(iiif_and_links)
-    return render_template("search.html", results=iiif_and_links, number_of_results=number_of_results, display_bb=display_bb, item=item, cold_start=request.method == "GET", page_size=PAGE_SIZE, page_number=page_number)
+    return render_template("search.html", results=iiif_and_links, uploaded_image_url = uploaded_image_url, number_of_results=number_of_results, exact_word=exact_word, display_bb=display_bb, item=item, cold_start=request.method == "GET", page_size=PAGE_SIZE, page_number=page_number)
 
 @app.route("/about")
 def about_page():
@@ -139,5 +143,4 @@ def show_original_image(subpath):
     return get("http://dl.cini.it/files/original/" + subpath).content
 
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port =8080)
+    app.run(debug=True)
