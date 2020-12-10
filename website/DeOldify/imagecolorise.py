@@ -50,18 +50,6 @@ def colorise_me(source_url, source_label, render_factor):
     colorised_image_link = os.path.join(color_images_dir, source_label+".png")
 
     if source_label not in cached_color_images:
-
-        models_dir = os.path.join(current_directory, 'models')
-
-        if not os.path.exists(models_dir):
-            os.makedirs(models_dir)
-
-        model_path = os.path.join(models_dir, 'ColorizeStable_gen.pth')
-
-        if not os.path.exists(model_path):
-            model_url = 'https://www.dropbox.com/s/usf7uifrctqw9rl/ColorizeStable_gen.pth?dl=0'
-            urllib.request.urlretrieve(model_url, model_path)
-
         color_image = colorise_image(
             source_url, current_directory, render_factor)
         cached_color_images[source_label] = color_image
