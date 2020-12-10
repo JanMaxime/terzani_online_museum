@@ -1,17 +1,12 @@
 # Import Vison API related libraries
 from ..utils.types import IIIF_Photo
+from ..utils.clean_text import clean_text
 from typing import List, Dict
 from google.cloud import vision
 from google.cloud.vision_v1 import types
 # Import dotenv library to get environment variables
 # Import urllib to read images
 import urllib.request as ur
-# Import nltk to process text
-from nltk.tokenize import word_tokenize
-from nltk.stem.porter import PorterStemmer
-import nltk
-import string
-nltk.download('punkt')
 
 
 def add_tag(new_tags: List, tag_collection: dict, image_label: str):
@@ -78,36 +73,6 @@ def add_bbox(new_bbox, new_bbox_name: str, bbox_collection: Dict, is_lobject: bo
         bbox_collection[new_bbox_name].append(vert)
 
     return bbox_collection
-
-
-def clean_text(text: str, lower: bool = True, rmv_punc: bool = True, stem: bool = True, norm: bool = True):
-    """
-    This function accepts a string and performs preprocessing steps on it. 
-
-    :param text (str): The string or text on which the preprocessing has to be performed.
-    :param lower (bool): Default=True, indicates if the text has to be made into lower case.
-    :param rmv_punc (bool): Default=True, indicates if the punctuation should be removed in the text.
-    :param stem (bool): Default=True, indicates if the stemming should be performed on the words in the text.
-    :param norm (bool): Default=True, indicates if the words in the has to be normalised.
-    :return cleaned_text (list): The modified text is returned as list after performing the indicated operations.
-    """
-
-    # split into words
-    tokens = word_tokenize(text)
-    if lower:
-        # convert to lower case
-        tokens = [w.lower() for w in tokens]
-    if rmv_punc:
-        # remove punctuation from each word
-        table = str.maketrans('', '', string.punctuation)
-        tokens = [w.translate(table)
-                  for w in tokens if w.translate(table) != '']
-    if stem:
-        # stemming of words
-        porter = PorterStemmer()
-        tokens = [porter.stem(word) for word in tokens]
-    cleaned_text = sorted(list(set(tokens)), key=str.lower)
-    return cleaned_text
 
 
 def get_annotation(photo: IIIF_Photo, client: vision.ImageAnnotatorClient):
@@ -178,7 +143,7 @@ def get_annotation(photo: IIIF_Photo, client: vision.ImageAnnotatorClient):
         landmark_info = dict()
         for lndmk in response.landmark_annotations:
             # if there are any landamrks identified, we store them in a seperate field,to access easily.
-            landmark_name = lndmk.description.lower()
+            landmark_name = lndmk.description
             landmark_info[landmark_name] = {
                 "latitude": lndmk.locations[0].lat_lng.latitude, "longitude": lndmk.locations[0].lat_lng.longitude}
 
