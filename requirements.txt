@@ -3,7 +3,7 @@ Flask-PyMongo
 nltk
 dnspython
 python-dotenv
-google-cloud-vision
+google-cloud-vision==0.38.1
 bs4
 fastai
 jupyterlab
