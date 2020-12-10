@@ -1,4 +1,5 @@
-from search import get_markers, search_country, search_photos
+import time
+from terzani.search.search import get_markers, search_country, search_photos, search_similar_photos
 from flask import Flask, redirect, url_for, render_template, request, jsonify, flash
 from flask_pymongo import PyMongo
 from werkzeug.utils import secure_filename
@@ -9,20 +10,41 @@ from requests import get
 from DeOldify.imagecolorise import colorise_me
 load_dotenv()
 
-
 app = Flask(__name__)
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
-sample_annotations = mongo.db["terzani_annotations"]
-sample_tags = mongo.db["terzani_taggings"]
-sample_imageVectors = mongo.db["terzani_image_vecs"]
-
-COLORISED_FOLDER = os.path.join('static', 'colorised_images')
+sample_annotations = mongo.db["image_annotations"]
+sample_tags = mongo.db["image_taggings"]
+sample_imageVectors = mongo.db["image_vectors"]
 
 ALLOWED_EXTENSIONS = set(['png', 'jpeg', 'jpg'])
-app.config['UPLOAD_FOLDER'] = COLORISED_FOLDER
-app.config['IMAGE_FOLDER'] = os.path.join('static', 'uploaded_images')
+
+current_directory = os.path.dirname(os.path.realpath(__file__))
+static_dir = os.path.join(current_directory, 'static')
+
+app.config['UPLOAD_FOLDER'] = os.path.join(static_dir, 'colorised_images')
+if not os.path.exists(app.config['UPLOAD_FOLDER']):
+    print("created folder 1", flush=True)
+    os.makedirs(app.config['UPLOAD_FOLDER'])
+
+app.config['IMAGE_FOLDER'] = os.path.join(static_dir, 'uploaded_images')
+if not os.path.exists(app.config['IMAGE_FOLDER']):
+    print("created folder 2", flush=True)
+    os.makedirs(app.config['IMAGE_FOLDER'])
+
 PAGE_SIZE = 21
+
+
+def clear_oldfiles(folder_path, old_than_hrs=1):
+    current_time = time.time()
+    limit_time = old_than_hrs * 3600
+    for old_file in os.listdir(folder_path):
+        fullpath = os.path.join(folder_path, old_file)
+        if os.stat(fullpath).st_mtime < (current_time - limit_time):
+            if os.path.isfile(fullpath):
+                os.remove(fullpath)
+            elif os.path.isdir(fullpath):
+                clear_oldfiles(fullpath)
 
 
 def allowed_file(filename):
@@ -116,6 +138,7 @@ def search_page():
             if 'image_file' not in request.files:
                 return redirect(request.url)
             else:
+                clear_oldfiles(app.config['IMAGE_FOLDER'], old_than_hrs=0.1)
                 image_file = request.files["image_file"]
                 if image_file and allowed_file(image_file.filename):
                     image_file.save(os.path.join(
@@ -133,17 +156,17 @@ def search_page():
     return render_template("search.html", results=iiif_and_links, uploaded_image_url=uploaded_image_url, number_of_results=number_of_results, exact_word=exact_word, display_bb=display_bb, item=item, cold_start=request.method == "GET", page_size=PAGE_SIZE, page_number=page_number)
 
 
-@app.route("/about")
+@ app.route("/about")
 def about_page():
     return render_template("about.html")
 
 
-@app.route("/image_iiif/<path:subpath>")
+@ app.route("/image_iiif/<path:subpath>")
 def show_iiif_image(subpath):
     return get("http://dl.cini.it:8080/digilib/Scaler/IIIF/" + subpath).content
 
 
-@app.route("/image_original/<path:subpath>")
+@ app.route("/image_original/<path:subpath>")
 def show_original_image(subpath):
     return get("http://dl.cini.it/files/original/" + subpath).content
 
