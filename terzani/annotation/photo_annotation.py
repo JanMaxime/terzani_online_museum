@@ -3,8 +3,7 @@ from ..utils.types import IIIF_Photo
 from ..utils.clean_text import clean_text
 from typing import List, Dict
 from google.cloud import vision
-from google.cloud.vision_v1 import types
-# Import dotenv library to get environment variables
+from google.cloud.vision import types
 # Import urllib to read images
 import urllib.request as ur
 
