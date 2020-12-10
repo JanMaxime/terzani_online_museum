@@ -1,6 +1,6 @@
-from imageRetrieval import get_imagevector, get_similarity
-from terzani.utils.clean_text import clean_text
+from ..utils.clean_text import clean_text
 from itertools import chain, islice
+from ..featurevec.photo_vector import get_vector, load_resnet_model, get_similarity
 
 
 def search_photos(item, tag_collection, annotation_collection, page_number, page_size, min_len=3, exact_match=False):
@@ -65,7 +65,13 @@ def get_markers(collection):
 
 
 def search_similar_photos(image_file, vector_collection, annotation_collection, count=20):
-    upimage_vec = get_imagevector(image_file)
+    # loading pretrained resent model
+    model, layer, scaler, normalize, to_tensor = load_resnet_model()
+
+    upimage_vec = get_vector(image_file, model, layer,
+                             scaler, normalize, to_tensor, is_url=False)
+
+    # upimage_vec = get_imagevector(image_file)
     similarity = {}
     # This dictionary stores the image label as key and the similarity with the uploaded image as value.
     similarity = {dbimage["image"]: get_similarity(
