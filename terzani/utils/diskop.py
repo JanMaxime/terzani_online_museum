@@ -5,12 +5,12 @@ from pathlib import Path
 
 
 def dict_to_json(dict_to_save: Dict, path: Path):
-    with open(path, "w") as outfile:
-        json.dump(dict_to_save, outfile, indent=4)
+    with open(path, "w", encoding='utf-8') as outfile:
+        json.dump(dict_to_save, outfile, indent=4, ensure_ascii=False)
 
 
 def json_to_dict(path: Path):
-    with open(path) as jfile:
+    with open(path, encoding='utf-8') as jfile:
         return json.load(jfile)
 
 
