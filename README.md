@@ -65,7 +65,7 @@ The photo annotation on a collection can be performed using the `create_database
 python scripts/dataprocessing/create_database.py -c "./config.json"
 ```
 
-### Photo annotation
+### Website
 
 #TODO: Move Website to scripts folder
 

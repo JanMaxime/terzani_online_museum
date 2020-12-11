@@ -27,12 +27,10 @@ def main(data_folder: Path, scrap_image_iiif: bool,
     # setting up the service account to use Google Vision API and Mongo DB
     load_dotenv()
 
-    GOOGLE_APPLICATION_CREDENTIALS = os.getenv(
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv(
         'GOOGLE_APPLICATION_CREDENTIALS')
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = GOOGLE_APPLICATION_CREDENTIALS
 
-    MANGO_CLIENT_URI = os.getenv('MONGO_URI')
-    os.environ['MANGO_CLIENT_URI'] = MANGO_CLIENT_URI
+    os.environ['MONGO_CLIENT_URI'] = os.getenv('MONGO_URI')
 
     iiif_annotation_file = data_folder.joinpath("recto_iiif_images.json")
 
@@ -164,7 +162,7 @@ def main(data_folder: Path, scrap_image_iiif: bool,
                     annotated_images[img_lbl]["obj_boxes"] = result["obj_boxes"]
 
                     # store the generated land mark information into the dictionary.
-                    if not result["landmark_info"]:
+                    if result["landmark_info"]:
                         annotated_images[img_lbl]["landmark_info"] = result["landmark_info"]
 
                     # store the generated land mark information into the dictionary.
@@ -176,39 +174,62 @@ def main(data_folder: Path, scrap_image_iiif: bool,
                         ), model, layer, scaler, normalize, to_tensor)
                         image_vecs[img_lbl] = feature_vec.tolist()
                     except:
-                        fvector_failed_images.apped(img_lbl)
+                        fvector_failed_images.append(img_lbl)
 
-    # save the tagged, annotated images.
-    dict_to_json(tagged_images, tagged_images_file)
-    dict_to_json(annotated_images, annotated_images_file)
-    dict_to_json(annotation_failed_images, annotation_failed_images_file)
-    dict_to_json(image_vecs, image_vectors_file)
-    dict_to_json(fvector_failed_images, fvector_failed_images_file)
+        # save the tagged, annotated images.
+        dict_to_json(tagged_images, tagged_images_file)
+        dict_to_json(annotated_images, annotated_images_file)
+        dict_to_json(annotation_failed_images, annotation_failed_images_file)
+        dict_to_json(image_vecs, image_vectors_file)
+        dict_to_json(fvector_failed_images, fvector_failed_images_file)
 
     if update_db:
-        # creating a client to work with mango db
-        mangoclient = pymongo.MongoClient(MANGO_CLIENT_URI)
+        # creating a client to work with mongo db
+        mongoclient = pymongo.MongoClient(mongo_CLIENT_URI)
         # selecting the photo database
-        mango_db = mangoclient[db_name]
+        mongo_db = mongoclient[db_name]
 
         # Storing the Image Tags in the collection tag_collection_name
-        mango_tag_collection = mango_db[tag_collection_name]
+        mongo_tag_collection = mongo_db[tag_collection_name]
+
+        # checking if the collection is not empty
+        if mongo_tag_collection.estimated_document_count() != 0:
+            # empty the collection
+            mongo_tag_collection.drop()
+            # create a empty collection
+            mongo_tag_collection = mongo_db[tag_collection_name]
         # inserting the dictionary into the db
-        for tag, img_labels in tagged_images.items():
-            mango_tag_collection.insert_one({"tag": tag, "images": img_labels})
+        for tag, img_labels in tqdm(tagged_images.items()):
+            mongo_tag_collection.insert_one({"tag": tag, "images": img_labels})
 
         # Storing the Image Annotation in the collection annotation_collection_name
-        mango_box_collection = mango_db[annotation_collection_name]
+        mongo_box_collection = mongo_db[annotation_collection_name]
+
+        # checking if the collection is not empty
+        if mongo_box_collection.estimated_document_count() != 0:
+            # empty the collection
+            mongo_box_collection.drop()
+            # create a empty collection
+            mongo_box_collection = mongo_db[annotation_collection_name]
+
         # inserting the dictionary into the db
-        for img_label, annotation in annotated_images.items():
-            mango_box_collection.insert_one(
+        for img_label, annotation in tqdm(annotated_images.items()):
+            mongo_box_collection.insert_one(
                 {"label": img_label, "annotation": annotation})
 
         # Storing the Image feature vector in the collection named fvector_collection_name
-        mango_vec_collection = mango_db[fvector_collection_name]
+        mongo_vec_collection = mongo_db[fvector_collection_name]
+
+        # checking if the collection is not empty
+        if mongo_vec_collection.estimated_document_count() != 0:
+            # empty the collection
+            mongo_vec_collection.drop()
+            # create a empty collection
+            mongo_vec_collection = mongo_db[fvector_collection_name]
+
         # inserting the dictionary into the db
-        for img_label, img_vec in image_vecs.items():
-            mango_vec_collection.insert_one(
+        for img_label, img_vec in tqdm(image_vecs.items()):
+            mongo_vec_collection.insert_one(
                 {"image": img_label, "feature_vec": img_vec})
 
 
@@ -232,6 +253,7 @@ if __name__ == "__main__":
 
     params["scrap_image_iiif"] = eval(params["scrap_image_iiif"])
     params["annotate_iiif"] = eval(params["annotate_iiif"])
+    params["update_db"] = eval(params["update_db"])
 
     if params["scrap_image_iiif"]:
         if ("collection_url" not in params) or (not params["collection_url"]):
@@ -250,7 +272,7 @@ if __name__ == "__main__":
             raise Exception(
                 "Collection manifest not specified in the configuration file")
 
-    if eval(params["update_db"]):
+    if params["update_db"]:
         if ("db_name" not in params) or (not params["db_name"]):
             raise Exception(
                 "Database name not specified in the configuration file")

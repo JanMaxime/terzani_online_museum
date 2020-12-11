@@ -1,4 +1,5 @@
-from search import *
+import time
+from terzani.search.search import get_markers, search_country, search_photos, search_similar_photos
 from flask import Flask, redirect, url_for, render_template, request, jsonify, flash
 from flask_pymongo import PyMongo
 from werkzeug.utils import secure_filename
@@ -9,20 +10,41 @@ from requests import get
 from DeOldify.imagecolorise import colorise_me
 load_dotenv()
 
-
 app = Flask(__name__)
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
-sample_annotations = mongo.db["terzani_annotations"]
-sample_tags = mongo.db["terzani_taggings"]
-sample_imageVectors = mongo.db["terzani_image_vecs"]
-
-COLORISED_FOLDER = os.path.join('static', 'colorised_images')
+sample_annotations = mongo.db["image_annotations"]
+sample_tags = mongo.db["image_taggings"]
+sample_imageVectors = mongo.db["image_vectors"]
 
 ALLOWED_EXTENSIONS = set(['png', 'jpeg', 'jpg'])
-app.config['UPLOAD_FOLDER'] = COLORISED_FOLDER
+
+current_directory = os.path.dirname(os.path.realpath(__file__))
+static_dir = os.path.join(current_directory, 'static')
+
+app.config['UPLOAD_FOLDER'] = os.path.join(static_dir, 'colorised_images')
+if not os.path.exists(app.config['UPLOAD_FOLDER']):
+    print("created folder 1", flush=True)
+    os.makedirs(app.config['UPLOAD_FOLDER'])
+
+app.config['IMAGE_FOLDER'] = os.path.join(static_dir, 'uploaded_images')
+if not os.path.exists(app.config['IMAGE_FOLDER']):
+    print("created folder 2", flush=True)
+    os.makedirs(app.config['IMAGE_FOLDER'])
 
 PAGE_SIZE = 21
+
+
+def clear_oldfiles(folder_path, old_than_hrs=1):
+    current_time = time.time()
+    limit_time = old_than_hrs * 3600
+    for old_file in os.listdir(folder_path):
+        fullpath = os.path.join(folder_path, old_file)
+        if os.stat(fullpath).st_mtime < (current_time - limit_time):
+            if os.path.isfile(fullpath):
+                os.remove(fullpath)
+            elif os.path.isdir(fullpath):
+                clear_oldfiles(fullpath)
 
 
 def allowed_file(filename):
@@ -82,14 +104,18 @@ def search_page():
     number_of_results = 0
     page_number = 0
     display_bb = False
+    exact_word = False
     item = ""
+    exact_word = False
+    uploaded_image_url = ""
     if request.method == "POST":
         if request.form["submit"] == "text_search":
             page_number = int(request.form["page_number"])
             item = request.form["item"]
             display_bb = request.form.get("display_bb", False)
+            exact_word = request.form.get("exact_word", False)
             photos, searched_items, number_of_results = search_photos(
-                item, sample_tags, sample_annotations, page_number, PAGE_SIZE)
+                item, sample_tags, sample_annotations, page_number, PAGE_SIZE, exact_match=exact_word)
 
             if not display_bb:
                 for res_photo in photos:
@@ -112,8 +138,12 @@ def search_page():
             if 'image_file' not in request.files:
                 return redirect(request.url)
             else:
+                clear_oldfiles(app.config['IMAGE_FOLDER'], old_than_hrs=0.1)
                 image_file = request.files["image_file"]
                 if image_file and allowed_file(image_file.filename):
+                    image_file.save(os.path.join(
+                        app.config['IMAGE_FOLDER'], image_file.filename))
+                    uploaded_image_url = image_file.filename
                     similar_photos = search_similar_photos(
                         image_file, sample_imageVectors, sample_annotations, count=20)
                     for res_photo in similar_photos:
@@ -123,21 +153,23 @@ def search_page():
                         number_of_results += len(new_item[1])
                         iiif_and_links.append(new_item)
 
-    print(iiif_and_links)
-    return render_template("search.html", results=iiif_and_links, number_of_results=number_of_results, display_bb=display_bb, item=item, cold_start=request.method == "GET", page_size=PAGE_SIZE, page_number=page_number)
+    return render_template("search.html", results=iiif_and_links, uploaded_image_url=uploaded_image_url, number_of_results=number_of_results, exact_word=exact_word, display_bb=display_bb, item=item, cold_start=request.method == "GET", page_size=PAGE_SIZE, page_number=page_number)
 
-@app.route("/about")
+
+@ app.route("/about")
 def about_page():
     return render_template("about.html")
 
-@app.route("/image_iiif/<path:subpath>")
+
+@ app.route("/image_iiif/<path:subpath>")
 def show_iiif_image(subpath):
     return get("http://dl.cini.it:8080/digilib/Scaler/IIIF/" + subpath).content
 
-@app.route("/image_original/<path:subpath>")
+
+@ app.route("/image_original/<path:subpath>")
 def show_original_image(subpath):
     return get("http://dl.cini.it/files/original/" + subpath).content
 
+
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port =8080)
+    app.run(debug=True)

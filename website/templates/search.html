@@ -15,13 +15,19 @@
                 <form action="#" method="POST" class="mb-5 mt-3">
                     <h3>Text Query</h3>
                     <div class="form-group" id="text_form">
-                        <input class="form-control" placeholder="Item" name="item" value="{{item}}" required/>
+                        <input class="form-control" placeholder="Word (3 letters min.)" name="item" value="{{item}}" required/>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
                       <input type="checkbox" style="vertical-align: middle;"class="form-check-input float-right" name="display_bb" {% if display_bb%}checked{%endif%}>Only show bounding box
-                    </label >      
-                </div>
+                    </label >
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" style="vertical-align: middle;"class="form-check-input float-right" name="exact_word" {% if exact_word%}checked{%endif%}>Search for exact word
+                        </label >  
+                    </div>
              <button id="submit_text_search" type="submit" name="submit" value="text_search" class="btn btn-primary mt-2">Search text</button>
              <input  id="page_number" name="page_number" style='visibility: hidden;' type='number' value='0' />
             </form>
@@ -40,6 +46,9 @@
                     <button type="submit" name="submit" value="image_search" class="btn btn-primary mt-3">Search Image</button>
                 </form>
 
+                <img class="mt-3" id="uploaded_image" style="width:100%"> {% if uploaded_image_url|length %}
+                <h6 class="mt-3">Comparison image</h6>
+                <img id="compared_image" style="width:100%" src="static/uploaded_images/{{uploaded_image_url}}"> {%endif%}
 
             </div>
         </div>
@@ -93,6 +102,23 @@
             fileName = fileName.slice(0, 40) + "..."
         }
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#uploaded_image').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#customFile").change(function() {
+        readURL(this);
     });
 </script>
 
