@@ -20,7 +20,7 @@ def main(data_folder: Path, scrap_image_iiif: bool,
          collection_url: URL, unsupported_collections: List,
          col_cntry_json: Path, server: str, manifest: str,
          annotate_iiif: bool, nu_photos: str,
-         update_db: bool, db_name: str,  tag_collection_name: str,
+         create_db: bool, db_name: str,  tag_collection_name: str,
          annotation_collection_name: str,
          fvector_collection_name: str):
 
@@ -30,7 +30,8 @@ def main(data_folder: Path, scrap_image_iiif: bool,
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv(
         'GOOGLE_APPLICATION_CREDENTIALS')
 
-    os.environ['MONGO_CLIENT_URI'] = os.getenv('MONGO_URI')
+    MONGO_CLIENT_URI = os.getenv('MONGO_URI')
+    os.environ['MONGO_CLIENT_URI'] = MONGO_CLIENT_URI
 
     iiif_annotation_file = data_folder.joinpath("recto_iiif_images.json")
 
@@ -183,9 +184,9 @@ def main(data_folder: Path, scrap_image_iiif: bool,
         dict_to_json(image_vecs, image_vectors_file)
         dict_to_json(fvector_failed_images, fvector_failed_images_file)
 
-    if update_db:
+    if create_db:
         # creating a client to work with mongo db
-        mongoclient = pymongo.MongoClient(mongo_CLIENT_URI)
+        mongoclient = pymongo.MongoClient(MONGO_CLIENT_URI)
         # selecting the photo database
         mongo_db = mongoclient[db_name]
 
@@ -253,7 +254,7 @@ if __name__ == "__main__":
 
     params["scrap_image_iiif"] = eval(params["scrap_image_iiif"])
     params["annotate_iiif"] = eval(params["annotate_iiif"])
-    params["update_db"] = eval(params["update_db"])
+    params["create_db"] = eval(params["create_db"])
 
     if params["scrap_image_iiif"]:
         if ("collection_url" not in params) or (not params["collection_url"]):
@@ -272,7 +273,7 @@ if __name__ == "__main__":
             raise Exception(
                 "Collection manifest not specified in the configuration file")
 
-    if params["update_db"]:
+    if params["create_db"]:
         if ("db_name" not in params) or (not params["db_name"]):
             raise Exception(
                 "Database name not specified in the configuration file")

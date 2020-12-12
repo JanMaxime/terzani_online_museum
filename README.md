@@ -55,7 +55,7 @@ The photo annotation on a collection can be performed using the `create_database
   "tag_collection_name": "<Name of the Image tag collection in Mongo Database>",
   "annotation_collection_name": "<Name of the Image annotation collection in Mongo Database>",
   "fvector_collection_name": "<Name of the Image feature vector collection in Mongo Database>",
-  "nu_photos": "<Number of images to be processed. If left empty all images are processed. If a number is provided, those many images are randomly sampled from the collection>"
+  "nu_photos": "<Number of images to be processed. If left empty or is set as 'full' all images are processed. If a number is provided, those many images are randomly sampled from the collection>"
 }
 ```
 
