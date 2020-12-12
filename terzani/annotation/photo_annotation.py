@@ -88,6 +88,7 @@ def get_annotation(photo: IIIF_Photo, client: vision.ImageAnnotatorClient):
     # reading the image
     image_data = ur.urlopen(photo.get_photo_link()).read()
     image = types.Image(content=image_data)
+    replace_chars = [".", "$"]
 
     # call the goole vision api to get the annotations of various types
     response = client.annotate_image({
@@ -179,7 +180,10 @@ def get_annotation(photo: IIIF_Photo, client: vision.ImageAnnotatorClient):
 
         # storing the text
         for txt in response.text_annotations:
-            modified_text = txt.description.replace(".", "_").lower()
+            modified_text = txt.description.replace(
+                ".", "_").replace("$", "_").lower()
+            if modified_text == "_":
+                continue
             result["text"].extend(modified_text)
 
             # the text identified on the images in not cleaned to store the original information.

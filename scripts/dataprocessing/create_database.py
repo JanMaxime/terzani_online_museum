@@ -1,5 +1,5 @@
 from pathlib import Path
-from purl import URL
+#from purl import URL
 from typing import List
 import os
 import json
@@ -14,6 +14,8 @@ from terzani.scrapping.photo_scrapping import get_collections, get_iiif_collecti
 from terzani.annotation.photo_annotation import get_annotation, add_tag
 from terzani.featurevec.photo_vector import get_vector, load_resnet_model
 from terzani.utils.diskop import dict_to_json, json_to_dict, list_to_pickle, pickle_to_list
+
+URL = str
 
 
 def main(data_folder: Path, scrap_image_iiif: bool,
