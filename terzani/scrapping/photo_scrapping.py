@@ -2,12 +2,10 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import urllib.request
-# from purl import URL
+from purl import URL
 from typing import List, Union
 
 from ..utils.types import IIIF_Photo
-
-URL = str
 
 
 def valid_collection(tag: str, unsupported_collections: List) -> Union[str, None]:

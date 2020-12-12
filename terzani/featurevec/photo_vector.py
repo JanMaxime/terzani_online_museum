@@ -1,4 +1,4 @@
-# from purl import URL
+from purl import URL
 from PIL import Image
 from io import BytesIO
 import requests
@@ -8,8 +8,6 @@ import torchvision.transforms as transforms
 import torchvision.models as models
 import torch
 from typing import Union
-
-URL = str
 
 
 def get_similarity(img_vec1, img_vec2):
