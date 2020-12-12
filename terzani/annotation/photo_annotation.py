@@ -184,7 +184,7 @@ def get_annotation(photo: IIIF_Photo, client: vision.ImageAnnotatorClient):
                 ".", "_").replace("$", "_").lower()
             if modified_text == "_":
                 continue
-            result["text"].extend(modified_text)
+            result["text"].extend([modified_text])
 
             # the text identified on the images in not cleaned to store the original information.
             obj_boxes = add_bbox(txt, modified_text, obj_boxes)
