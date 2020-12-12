@@ -172,4 +172,5 @@ def show_original_image(subpath):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    from waitress import serve
+    serve(app, "0.0.0.0", 8080)
