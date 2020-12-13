@@ -164,7 +164,10 @@ def main(data_folder: Path, scrap_image_iiif: bool,
 
                     # store the generated land mark information into the dictionary.
                     if result["landmark_info"]:
-                        annotated_images[img_lbl]["landmark_info"] = result["landmark_info"]
+                        for lnd_mrk_name, lnd_mrk_coods in result["landmark_info"].items():
+                            annotated_images[img_lbl]["landmark_info"] = {
+                                lnd_mrk_name: lnd_mrk_coods}
+                            break
 
                     # store the generated land mark information into the dictionary.
                     annotated_images[img_lbl]["country"] = img_country
