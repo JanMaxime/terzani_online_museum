@@ -4,6 +4,10 @@
 
 This project aims to bring the Terzani Photo collection online enabling text search and image search in the photo collection.
 
+## Database Setup
+
+This project uses a NoSQL database provided by MongoDb. Thus it is advised the users to create a [cloud Database](https://www.mongodb.com/pricing) and provide its URI as described below.
+
 ## Environment Variables
 
 ### To use GOOGLE VISION API
@@ -67,7 +71,11 @@ python scripts/dataprocessing/create_database.py -c "./config.json"
 
 ### Website
 
-#TODO: Move Website to scripts folder
+The following components in the `server` present at _website/server.py_ needs to be changed according to the usage.
+
+1. sample_annotations = mongo.db["Name of the Mongo collection containg the annotations"]
+2. sample_tags = mongo.db["Name of the Mongo collection containg the taggings"]
+3. sample_imageVectors = mongo.db["Name of the Mongo collection containg the feature vectors"]
 
 #### Running script
 
