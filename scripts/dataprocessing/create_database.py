@@ -185,12 +185,13 @@ def main(data_folder: Path, scrap_image_iiif: bool,
                     print("Exception {} for image label {}".format(
                         e, photo.iiif["label"]))
 
-        # save the tagged, annotated images.
-        dict_to_json(tagged_images, tagged_images_file)
-        dict_to_json(annotated_images, annotated_images_file)
-        dict_to_json(annotation_failed_images, annotation_failed_images_file)
-        dict_to_json(image_vecs, image_vectors_file)
-        dict_to_json(fvector_failed_images, fvector_failed_images_file)
+            # save the tagged, annotated images.
+            dict_to_json(tagged_images, tagged_images_file)
+            dict_to_json(annotated_images, annotated_images_file)
+            dict_to_json(annotation_failed_images,
+                         annotation_failed_images_file)
+            dict_to_json(image_vecs, image_vectors_file)
+            dict_to_json(fvector_failed_images, fvector_failed_images_file)
 
     if create_db:
         # creating a client to work with mongo db
