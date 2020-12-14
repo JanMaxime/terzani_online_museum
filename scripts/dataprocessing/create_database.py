@@ -175,7 +175,7 @@ def main(data_folder: Path, scrap_image_iiif: bool,
                         ), model, layer, scaler, normalize, to_tensor)
                         image_vecs[img_lbl] = feature_vec.tolist()
                     except:
-                        fvector_failed_images.append(img_lbl)
+                        fvector_failed_images[img_lbl] = []
 
         # save the tagged, annotated images.
         dict_to_json(tagged_images, tagged_images_file)
