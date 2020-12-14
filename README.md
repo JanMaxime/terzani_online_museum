@@ -82,3 +82,7 @@ The following components in the `server` present at _website/server.py_ needs to
 ```bash
 python website/server.py
 ```
+
+#### Caution on using the Image Colorization
+
+We have observed that the python script sometimes fails to download the pretrained model for colorization. In such cases, the users are required to download the pth file from [here](https://www.dropbox.com/s/usf7uifrctqw9rl/ColorizeStable_gen.pth?dl=0) and place it in `website/DeOldify/models/` with the name `ColorizeStable_gen.pth`.
