@@ -143,7 +143,7 @@ def get_annotation(photo: IIIF_Photo, client: vision.ImageAnnotatorClient):
         landmark_info = dict()
         for lndmk in response.landmark_annotations:
             # if there are any landamrks identified, we store them in a seperate field,to access easily.
-            landmark_name = lndmk.description
+            landmark_name = lndmk.description.replace(".", " ")
             landmark_info[landmark_name] = {
                 "latitude": lndmk.locations[0].lat_lng.latitude, "longitude": lndmk.locations[0].lat_lng.longitude}
 
