@@ -122,67 +122,75 @@ def main(data_folder: Path, scrap_image_iiif: bool,
                 img_lbl = photo.iiif["label"]
                 img_country = photo.country
 
-                result = get_annotation(photo, client)
+                try:
 
-                if not result["success"]:
+                    result = get_annotation(photo, client)
+
+                    if not result["success"]:
+                        annotation_failed_images[img_lbl] = {}
+                        annotation_failed_images[img_lbl]["error"] = [
+                            result["error_code"], result["error_message"]]
+
+                    else:
+                        annotated_images[img_lbl] = {}
+
+                        # store the iiif description
+                        annotated_images[img_lbl]["iiif"] = photo.iiif
+
+                        # Add the label and image label to the dictionary to perform search
+                        tagged_images = add_tag(
+                            result["labels"], tagged_images, img_lbl)
+
+                        # Add the web entity and image label to the dictionary to perform search
+                        tagged_images = add_tag(
+                            result["webent"], tagged_images, img_lbl)
+
+                        # we add the landmarks and image label to the dictionary to perform search
+                        tagged_images = add_tag(
+                            result["lndmks"], tagged_images, img_lbl)
+
+                        # we add the logo names and image label to the dictionary to perform search
+                        tagged_images = add_tag(
+                            result["logos"], tagged_images, img_lbl)
+
+                        # we add the object names and image label to the dictionary to perform search
+                        tagged_images = add_tag(
+                            result["objects"], tagged_images, img_lbl)
+
+                        # we add the text and image label to the dictionary to perform search
+                        tagged_images = add_tag(
+                            result["text"], tagged_images, img_lbl)
+
+                        # store the generated object boxes into the dictionary.
+                        annotated_images[img_lbl]["obj_boxes"] = result["obj_boxes"]
+
+                        # store the generated land mark information into the dictionary.
+                        if result["landmark_info"]:
+                            annotated_images[img_lbl]["landmark_info"] = result["landmark_info"]
+
+                        # store the generated land mark information into the dictionary.
+                        annotated_images[img_lbl]["country"] = img_country
+
+                        # get the feature vector of the image
+                        try:
+                            feature_vec = get_vector(photo.get_photo_link(
+                            ), model, layer, scaler, normalize, to_tensor)
+                            image_vecs[img_lbl] = feature_vec.tolist()
+                        except:
+                            fvector_failed_images[img_lbl] = []
+                except Exception as e:
+                    print("Exception {} for image label {}".format(
+                        e, photo.iiif["label"]))
                     annotation_failed_images[img_lbl] = {}
-                    annotation_failed_images[img_lbl]["error"] = [
-                        result["error_code"], result["error_message"]]
+                    annotation_failed_images[img_lbl]["error"] = [-1, e]
 
-                else:
-                    annotated_images[img_lbl] = {}
-
-                    # store the iiif description
-                    annotated_images[img_lbl]["iiif"] = photo.iiif
-
-                    # Add the label and image label to the dictionary to perform search
-                    tagged_images = add_tag(
-                        result["labels"], tagged_images, img_lbl)
-
-                    # Add the web entity and image label to the dictionary to perform search
-                    tagged_images = add_tag(
-                        result["webent"], tagged_images, img_lbl)
-
-                    # we add the landmarks and image label to the dictionary to perform search
-                    tagged_images = add_tag(
-                        result["lndmks"], tagged_images, img_lbl)
-
-                    # we add the logo names and image label to the dictionary to perform search
-                    tagged_images = add_tag(
-                        result["logos"], tagged_images, img_lbl)
-
-                    # we add the object names and image label to the dictionary to perform search
-                    tagged_images = add_tag(
-                        result["objects"], tagged_images, img_lbl)
-
-                    # we add the text and image label to the dictionary to perform search
-                    tagged_images = add_tag(
-                        result["text"], tagged_images, img_lbl)
-
-                    # store the generated object boxes into the dictionary.
-                    annotated_images[img_lbl]["obj_boxes"] = result["obj_boxes"]
-
-                    # store the generated land mark information into the dictionary.
-                    if result["landmark_info"]:
-                        annotated_images[img_lbl]["landmark_info"] = result["landmark_info"]
-
-                    # store the generated land mark information into the dictionary.
-                    annotated_images[img_lbl]["country"] = img_country
-
-                    # get the feature vector of the image
-                    try:
-                        feature_vec = get_vector(photo.get_photo_link(
-                        ), model, layer, scaler, normalize, to_tensor)
-                        image_vecs[img_lbl] = feature_vec.tolist()
-                    except:
-                        fvector_failed_images[img_lbl] = []
-
-        # save the tagged, annotated images.
-        dict_to_json(tagged_images, tagged_images_file)
-        dict_to_json(annotated_images, annotated_images_file)
-        dict_to_json(annotation_failed_images, annotation_failed_images_file)
-        dict_to_json(image_vecs, image_vectors_file)
-        dict_to_json(fvector_failed_images, fvector_failed_images_file)
+            # save the tagged, annotated images.
+            dict_to_json(tagged_images, tagged_images_file)
+            dict_to_json(annotated_images, annotated_images_file)
+            dict_to_json(annotation_failed_images,
+                         annotation_failed_images_file)
+            dict_to_json(image_vecs, image_vectors_file)
+            dict_to_json(fvector_failed_images, fvector_failed_images_file)
 
     if create_db:
         # creating a client to work with mongo db
