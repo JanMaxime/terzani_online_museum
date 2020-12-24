@@ -8,6 +8,39 @@ This project aims to bring the Terzani Photo collection online enabling text sea
 
 This project uses a NoSQL database provided by MongoDb. Thus it is advised the users to create a [cloud Database](https://www.mongodb.com/pricing) and provide its URI as described below.
 
+### Database Indexing
+
+After the python script uploads the data to the database, to perform text base search the tag collection requires a search index.  A search index can be created on the collection using at steps shown [here](https://docs.atlas.mongodb.com/reference/atlas-search/create-index). After step 6, replace the JSON document with the below document and continue with the remaining steps.
+
+```json
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "tag": [
+        {
+          "foldDiacritics": false,
+          "maxGrams": 7,
+          "minGrams": 3,
+          "tokenization": "edgeGram",
+          "type": "autocomplete"
+        },
+        {
+          "analyzer": "lucene.standard",
+          "multi": {
+            "keywordAnalyzer": {
+              "analyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
+          "type": "string"
+        }
+      ]
+    }
+  }
+}
+```
+
 ## Environment Variables
 
 ### To use GOOGLE VISION API
